@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contacto | Leña & Sabor</title>
+
+    <link rel="icon" href="img/LOGO1.jpeg">
+    <link rel="apple-touch-icon" href="img/LOGO2.PNG">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Fondo -->
+    <div class="bg-layer"></div>
+    <div class="bg-texture"></div>
+
+    <!-- Hojas animadas -->
+    <canvas id="leavesCanvas"></canvas>
+
+    <!-- Decoraciones -->
+    <div class="corner-decoration top-left"></div>
+    <div class="corner-decoration top-right"></div>
+    <div class="corner-decoration bottom-left"></div>
+    <div class="corner-decoration bottom-right"></div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <aside class="navbar" id="navbar">
+
+        <div class="navbar-logo">
+            <img src="img/LOGO2.PNG" alt="Logo Leña & Sabor">
+
+            <div>
+                <span>LEÑA</span>
+                <strong>& SABOR</strong>
+            </div>
+        </div>
+
+
+        <nav class="navbar-links">
+
+            <!-- Inicio -->
+            <a href="index.html" class="navbar-link">
+                <i class="fa-solid fa-house"></i>
+                <span>Inicio</span>
+            </a>
+
+
+            <!-- Menú -->
+            <button class="navbar-link menu-trigger" id="menuTrigger" type="button">
+                <span>
+                    <i class="fa-solid fa-utensils"></i>
+                    Menú
+                </span>
+
+                <i class="fa-solid fa-chevron-down menu-arrow"></i>
+            </button>
+
+
+            <!-- Categorías -->
+            <div class="menu-dropdown" id="menuDropdown">
+
+                <a href="entradas.html">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    Entradas
+                </a>
+
+                <a href="fuertes.html">
+                    <i class="fa-solid fa-drumstick-bite"></i>
+                    Platos fuertes
+                </a>
+
+                <a href="bebidas.html">
+                    <i class="fa-solid fa-mug-hot"></i>
+                    Bebidas
+                </a>
+
+                <a href="cervezas.html">
+                    <i class="fa-solid fa-beer-mug-empty"></i>
+                    Cervezas
+                </a>
+
+                <a href="refrescos.html">
+                    <i class="fa-solid fa-glass-water"></i>
+                    Refrescos
+                </a>
+
+            </div>
+
+
+            <!-- Contacto -->
+            <a href="contacto.html" class="navbar-link active">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Contacto</span>
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- Botón menú -->
+    <button class="navbar-toggle" id="navbarToggle" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+
+    <!-- Logo sticky -->
+    <div class="logo-sticky" id="logoSticky">
+        <img src="img/LOGO2.PNG" alt="Leña & Sabor">
+    </div>
+
+
+    <!-- =========================
+         CONTENIDO
+    ========================== -->
+
+    <main class="menu-page contacto-page">
+
+        <header class="menu-page-header">
+
+            <span class="menu-page-kicker">
+                LEÑA & SABOR
+            </span>
+
+            <h1>
+                Contáctanos
+            </h1>
+
+            <p>
+                Estamos listos para recibirte y compartir contigo
+                el sabor de nuestra cocina.
+            </p>
+
+        </header>
+
+
+        <!-- Información de contacto -->
+        <section class="contact-grid">
+
+
+            <!-- Ubicación -->
+            <article class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="contact-content">
+
+                    <h2>Ubicación</h2>
+
+                    <p>
+                        Salón Eventos Casa Oma
+                    </p>
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=Sal%C3%B3n%20Eventos%20Casa%20Oma"
+                        target="_blank" rel="noopener noreferrer" class="contact-action">
+                        Ver ubicación
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Teléfono -->
+            <article class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <div class="contact-content">
+
+                    <h2>Teléfono</h2>
+
+                    <p>
+                        322 619 4676
+                    </p>
+
+                    <a href="tel:+573226194676" class="contact-action">
+                        Llamar ahora
+                        <i class="fa-solid fa-phone"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- Horario -->
+            <article class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="contact-content">
+
+                    <h2>Horario</h2>
+
+                    <p>
+                        Domingo y festivos
+                    </p>
+
+                    <span class="contact-schedule">
+                        12:00 p. m. – 5:00 p. m.
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- Instagram -->
+            <article class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+
+                <div class="contact-content">
+
+                    <h2>Instagram</h2>
+
+                    <p>
+                        @lenaysabor.17
+                    </p>
+
+                    <a href="https://www.instagram.com/lenaysabor.17/" target="_blank" rel="noopener noreferrer"
+                        class="contact-action">
+                        Visitar perfil
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- TikTok -->
+            <article class="contact-card">
+
+                <div class="contact-icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                </div>
+
+                <div class="contact-content">
+
+                    <h2>TikTok</h2>
+
+                    <p>
+                        @lenaysab0r
+                    </p>
+
+                    <a href="https://www.tiktok.com/@lenaysab0r" target="_blank" rel="noopener noreferrer"
+                        class="contact-action">
+                        Ver perfil
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- Frase final -->
+        <section class="contact-message">
+
+            <div class="contact-message-line"></div>
+
+            <p>
+                Tradición colombiana · Fogón de leña y esencias campestres
+            </p>
+
+            <div class="contact-message-line"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <p>
+            © 2026 Leña & Sabor
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/leaves.js"></script>
+    <script src="js/navbar.js"></script>
+
+</body>
+
+</html>

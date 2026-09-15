@@ -1,0 +1,364 @@
+:root {
+    --contact-gold: #F4B400;
+    --contact-gold-dark: #C68B00;
+    --contact-cream: #F2E4C8;
+    --contact-soft: #C9A87A;
+    --contact-bg: rgba(44, 26, 14, 0.86);
+    --contact-border: rgba(244, 180, 0, 0.22);
+    --contact-green: #4CAF50;
+}
+
+
+/* =========================================
+   PÁGINA DE CONTACTO
+========================================= */
+
+.contacto-page {
+    min-height: 100vh;
+    padding-bottom: 70px;
+}
+
+
+/* =========================================
+   GRID DE CONTACTO
+========================================= */
+
+.contact-grid {
+    width: min(1050px, 100%);
+    margin: 55px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    padding: 0 20px;
+}
+
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.contact-card {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+
+    padding: 28px;
+
+    background:
+        linear-gradient(145deg,
+            rgba(63, 37, 19, 0.94),
+            rgba(37, 22, 12, 0.94));
+
+    border: 1px solid var(--contact-border);
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.28);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Brillo decorativo */
+
+.contact-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    top: -70px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background: rgba(244, 180, 0, 0.08);
+
+    pointer-events: none;
+}
+
+
+.contact-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(244, 180, 0, 0.5);
+
+    box-shadow:
+        0 18px 38px rgba(0, 0, 0, 0.38);
+}
+
+
+/* =========================================
+   ICONOS
+========================================= */
+
+.contact-icon {
+    flex-shrink: 0;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(135deg,
+            rgba(244, 180, 0, 0.18),
+            rgba(230, 74, 25, 0.12));
+
+    border: 1px solid rgba(244, 180, 0, 0.28);
+
+    color: var(--contact-gold);
+
+    font-size: 22px;
+
+    box-shadow:
+        inset 0 0 20px rgba(244, 180, 0, 0.04);
+}
+
+
+.contact-card:hover .contact-icon {
+    background:
+        linear-gradient(135deg,
+            rgba(244, 180, 0, 0.26),
+            rgba(230, 74, 25, 0.18));
+}
+
+
+/* =========================================
+   CONTENIDO
+========================================= */
+
+.contact-content {
+    min-width: 0;
+}
+
+
+.contact-content h2 {
+    margin: 2px 0 8px;
+
+    color: var(--contact-cream);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+
+.contact-content p {
+    margin: 0 0 12px;
+
+    color: var(--contact-soft);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.94rem;
+    line-height: 1.6;
+}
+
+
+.contact-schedule {
+    display: inline-block;
+
+    color: var(--contact-cream);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   BOTONES / ENLACES
+========================================= */
+
+.contact-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--contact-gold);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 0.84rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        gap 0.25s ease;
+}
+
+
+.contact-action:hover {
+    color: #FFD45A;
+    gap: 11px;
+}
+
+
+.contact-action i {
+    font-size: 0.75rem;
+}
+
+
+/* =========================================
+   FRASE FINAL
+========================================= */
+
+.contact-message {
+    width: min(900px, 90%);
+
+    margin: 65px auto 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    text-align: center;
+}
+
+
+.contact-message p {
+    margin: 0;
+
+    color: var(--contact-soft);
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 0.95rem;
+    font-style: italic;
+
+    letter-spacing: 0.4px;
+}
+
+
+.contact-message-line {
+    flex: 1;
+
+    height: 1px;
+
+    max-width: 130px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(244, 180, 0, 0.35),
+            transparent);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.contacto-page+.site-footer {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        width: min(650px, 100%);
+
+        margin-top: 45px;
+    }
+
+}
+
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 600px) {
+
+    .contact-grid {
+        padding: 0 14px;
+
+        gap: 16px;
+
+        margin-top: 35px;
+    }
+
+
+    .contact-card {
+        gap: 15px;
+
+        padding: 21px;
+    }
+
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+
+        border-radius: 13px;
+
+        font-size: 19px;
+    }
+
+
+    .contact-content h2 {
+        font-size: 1.15rem;
+    }
+
+
+    .contact-content p {
+        font-size: 0.84rem;
+    }
+
+
+    .contact-schedule {
+        font-size: 0.8rem;
+    }
+
+
+    .contact-action {
+        font-size: 0.78rem;
+    }
+
+
+    .contact-message {
+        margin-top: 45px;
+
+        gap: 10px;
+    }
+
+
+    .contact-message p {
+        font-size: 0.8rem;
+    }
+
+
+    .contact-message-line {
+        max-width: 50px;
+    }
+
+}

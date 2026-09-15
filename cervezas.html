@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cervezas | Leña & Sabor</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         FONDO
+    ========================================== -->
+
+    <div class="background-overlay"></div>
+
+
+    <!-- =========================================
+         BARRA LATERAL
+    ========================================== -->
+
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
+
+        <!-- LOGO -->
+        <a href="index.html" class="navbar-logo">
+            <span>LEÑA</span>
+            <span>&amp; SABOR</span>
+        </a>
+
+
+        <ul class="navbar-links">
+
+            <!-- INICIO -->
+            <li>
+                <a href="index.html" class="navbar-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span>INICIO</span>
+                </a>
+            </li>
+
+
+            <!-- MENÚ -->
+            <li class="navbar-menu-item">
+
+                <button class="navbar-link menu-trigger active" id="menuTrigger" type="button" aria-expanded="true"
+                    aria-controls="menuDropdown">
+
+                    <span>
+                        <i class="fa-solid fa-utensils"></i>
+                        MENÚ
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="menu-dropdown open" id="menuDropdown">
+
+                    <!-- ENTRADAS -->
+                    <a href="entradas.html">
+                        <i class="fa-solid fa-bowl-food"></i>
+                        Entradas
+                    </a>
+
+
+                    <!-- PLATOS FUERTES -->
+                    <a href="fuertes.html">
+                        <i class="fa-solid fa-drumstick-bite"></i>
+                        Platos fuertes
+                    </a>
+
+
+                    <!-- BEBIDAS -->
+                    <a href="bebidas.html">
+                        <i class="fa-solid fa-mug-hot"></i>
+                        Bebidas
+                    </a>
+
+
+                    <!-- CERVEZAS -->
+                    <a href="cervezas.html" class="active">
+                        <i class="fa-solid fa-beer-mug-empty"></i>
+                        Cervezas
+                    </a>
+
+
+                    <!-- REFRESCOS -->
+                    <a href="refrescos.html">
+                        <i class="fa-solid fa-glass-water"></i>
+                        Refrescos
+                    </a>
+
+                </div>
+
+            </li>
+
+
+            <!-- CONTACTO -->
+            <li>
+                <a href="contacto.html" class="navbar-link">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>CONTACTO</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================================
+         BOTÓN HAMBURGUESA
+    ========================================== -->
+
+    <button class="navbar-toggle" id="navbarToggle" type="button" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="navbar">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <!-- =========================================
+         CONTENIDO
+    ========================================== -->
+
+    <main class="menu-page cervezas-page">
+
+
+        <!-- =========================================
+             ENCABEZADO
+        ========================================== -->
+
+        <header class="menu-page-header">
+
+            <span class="menu-page-kicker">
+                LEÑA &amp; SABOR
+            </span>
+
+            <h1>
+                CERVEZAS
+            </h1>
+
+            <p>
+                El acompañamiento perfecto para disfrutar cada momento.
+            </p>
+
+        </header>
+
+
+        <!-- =========================================
+             PRODUCTOS
+        ========================================== -->
+
+        <section class="menu-products cervezas-products">
+
+
+            <!-- =====================================
+                 CERVEZA 1
+            ====================================== -->
+
+            <article class="menu-product-card cerveza-card">
+
+                <div class="menu-product-image cerveza-image">
+
+                    <span class="drink-leaf leaf-1" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <span class="drink-leaf leaf-2" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <img src="img/CORONA.PNG" alt="Cerveza Nacional" loading="lazy">
+
+                </div>
+
+
+                <div class="menu-product-content">
+
+                    <div class="menu-product-title">
+
+                        <h2>
+                            Corona
+                        </h2>
+
+                        <span class="menu-product-price">
+                            $12.000
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Cerveza fría, ideal para acompañar
+                        nuestros platos y compartir.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =====================================
+                 CERVEZA 2
+            ====================================== -->
+
+            <article class="menu-product-card cerveza-card">
+
+                <div class="menu-product-image cerveza-image">
+
+                    <span class="drink-leaf leaf-1" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <span class="drink-leaf leaf-2" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <img src="img/POKER.PNG" alt="Cerveza Premium" loading="lazy">
+
+                </div>
+
+
+                <div class="menu-product-content">
+
+                    <div class="menu-product-title">
+
+                        <h2>
+                            Cerveza Poker
+                        </h2>
+
+                        <span class="menu-product-price">
+                            $5.000
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Una opción refrescante para disfrutar
+                        con el sabor de nuestra cocina.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =====================================
+                 CERVEZA 3
+            ====================================== -->
+
+            <article class="menu-product-card cerveza-card">
+
+                <div class="menu-product-image cerveza-image">
+
+                    <span class="drink-leaf leaf-1" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <span class="drink-leaf leaf-2" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <img src="img/CLUN.PNG" alt="Cerveza Especial" loading="lazy">
+
+                </div>
+
+
+                <div class="menu-product-content">
+
+                    <div class="menu-product-title">
+
+                        <h2>
+                            Cerveza Club Colombia
+                        </h2>
+
+                        <span class="menu-product-price">
+                            $6.500
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Una cerveza seleccionada para acompañar
+                        nuestra experiencia gastronómica.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <article class="menu-product-card cerveza-card">
+
+                <div class="menu-product-image cerveza-image">
+
+                    <span class="drink-leaf leaf-1" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <span class="drink-leaf leaf-2" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <img src="img/AGUILA.PNG" alt="Cerveza Especial" loading="lazy">
+
+                </div>
+
+
+                <div class="menu-product-content">
+
+                    <div class="menu-product-title">
+
+                        <h2>
+                            Cerveza Aguila Light
+                        </h2>
+
+                        <span class="menu-product-price">
+                            $6.000
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Una cerveza seleccionada para acompañar
+                        nuestra experiencia gastronómica.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="menu-product-card cerveza-card">
+
+                <div class="menu-product-image cerveza-image">
+
+                    <span class="drink-leaf leaf-1" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <span class="drink-leaf leaf-2" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <img src="img/VASO MICHELADO.PNG" alt="Cerveza Especial" loading="lazy">
+
+                </div>
+
+
+                <div class="menu-product-content">
+
+                    <div class="menu-product-title">
+
+                        <h2>
+                            Vaso Michelado
+                        </h2>
+
+                        <span class="menu-product-price">
+                            $10.000
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Una cerveza seleccionada para acompañar
+                        nuestra experiencia gastronómica.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         SCRIPTS
+    ========================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/leaves.js"></script>
+    <script src="js/navbar.js"></script>
+
+</body>
+
+</html>

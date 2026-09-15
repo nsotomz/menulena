@@ -1,0 +1,857 @@
+:root {
+    --nav-width: 290px;
+    --nav-bg: rgba(31, 18, 10, 0.98);
+    --nav-border: rgba(244, 180, 0, 0.20);
+    --nav-text: #F2E4C8;
+    --nav-soft: #C9A87A;
+    --nav-gold: #F4B400;
+}
+
+
+/* =========================================
+   NAVBAR LATERAL
+========================================= */
+
+.navbar {
+    position: fixed;
+    z-index: 1000;
+
+    top: 0;
+    left: 0;
+
+    width: var(--nav-width);
+    height: 100dvh;
+
+    padding: 28px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        linear-gradient(180deg,
+            rgba(42, 24, 12, 0.99),
+            rgba(25, 14, 8, 0.99));
+
+    border-right: 1px solid var(--nav-border);
+
+    box-shadow:
+        12px 0 35px rgba(0, 0, 0, 0.35);
+
+    transform: translateX(-100%);
+
+    transition:
+        transform 0.35s cubic-bezier(.4, 0, .2, 1);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    overscroll-behavior: contain;
+
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgba(244, 180, 0, 0.35) transparent;
+}
+
+
+.navbar.open {
+    transform: translateX(0);
+}
+
+
+/* Scrollbar Chrome / Edge */
+
+.navbar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.navbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.navbar::-webkit-scrollbar-thumb {
+    background: rgba(244, 180, 0, 0.35);
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 8px 7px 25px;
+
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid rgba(244, 180, 0, 0.14);
+}
+
+
+.navbar-logo img {
+    width: 54px;
+    height: 54px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+.navbar-logo div {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.navbar-logo span,
+.navbar-logo strong {
+    font-family: "Playfair Display", serif;
+
+    line-height: 1;
+    letter-spacing: 1.5px;
+}
+
+
+.navbar-logo span {
+    color: var(--nav-text);
+    font-size: 1rem;
+}
+
+
+.navbar-logo strong {
+    color: var(--nav-gold);
+    font-size: 1.15rem;
+}
+
+
+/* =========================================
+   ENLACES
+========================================= */
+
+.navbar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+.navbar-link {
+    width: 100%;
+    min-height: 48px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 12px 15px;
+
+    color: var(--nav-text);
+
+    background: transparent;
+
+    border: 0;
+    border-radius: 12px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.navbar-link i {
+    width: 20px;
+
+    color: var(--nav-soft);
+
+    font-size: 0.95rem;
+
+    text-align: center;
+
+    transition: color 0.25s ease;
+}
+
+
+.navbar-link:hover {
+    color: #fff;
+
+    background:
+        rgba(244, 180, 0, 0.09);
+
+    transform: translateX(3px);
+}
+
+
+.navbar-link:hover i {
+    color: var(--nav-gold);
+}
+
+
+/* Enlace activo */
+
+.navbar-link.active {
+    color: #fff;
+
+    background:
+        linear-gradient(90deg,
+            rgba(244, 180, 0, 0.15),
+            rgba(244, 180, 0, 0.04));
+
+    border-left: 2px solid var(--nav-gold);
+}
+
+
+.navbar-link.active i {
+    color: var(--nav-gold);
+}
+
+
+/* =========================================
+   BOTÓN MENÚ
+========================================= */
+
+.menu-trigger {
+    justify-content: space-between;
+
+    appearance: none;
+
+    text-align: left;
+}
+
+
+.menu-trigger>span {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+
+.menu-arrow {
+    width: auto !important;
+
+    font-size: 0.7rem !important;
+
+    transition:
+        transform 0.3s ease,
+        color 0.25s ease;
+}
+
+
+.menu-trigger.expanded .menu-arrow {
+    transform: rotate(180deg);
+    color: var(--nav-gold);
+}
+
+
+/* =========================================
+   SUBMENÚ
+========================================= */
+
+.menu-dropdown {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    margin-left: 16px;
+
+    opacity: 0;
+
+    transition:
+        grid-template-rows 0.3s ease,
+        opacity 0.25s ease;
+}
+
+
+.menu-dropdown::before {
+    content: "";
+    min-height: 0;
+}
+
+
+.menu-dropdown.open {
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+}
+
+
+.menu-dropdown>* {
+    min-height: 0;
+
+    overflow: hidden;
+}
+
+
+.menu-dropdown a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    min-height: 42px;
+
+    padding: 9px 12px;
+
+    color: var(--nav-soft);
+
+    border-radius: 9px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.82rem;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        padding-left 0.2s ease;
+}
+
+
+.menu-dropdown a i {
+    width: 17px;
+
+    color: rgba(244, 180, 0, 0.65);
+
+    font-size: 0.78rem;
+
+    text-align: center;
+}
+
+
+.menu-dropdown a:hover {
+    padding-left: 17px;
+
+    color: var(--nav-text);
+
+    background:
+        rgba(244, 180, 0, 0.07);
+}
+
+
+.menu-dropdown a:hover i {
+    color: var(--nav-gold);
+}
+
+
+/* =========================================
+   BOTÓN HAMBURGUESA
+========================================= */
+
+.navbar-toggle {
+    position: fixed;
+
+    z-index: 1100;
+
+    top: 20px;
+    left: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(244, 180, 0, 0.30);
+    border-radius: 50%;
+
+    color: var(--nav-gold);
+
+    background:
+        rgba(31, 18, 10, 0.90);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.28);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    cursor: pointer;
+
+    transition:
+        left 0.35s ease,
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.navbar-toggle:hover {
+    transform: scale(1.06);
+
+    background:
+        rgba(244, 180, 0, 0.12);
+}
+
+
+.navbar-toggle.active {
+    left: calc(var(--nav-width) - 68px);
+}
+
+
+.navbar-toggle i {
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.navbar-overlay {
+    position: fixed;
+
+    z-index: 900;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, 0.55);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+
+.navbar-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* =========================================
+   TABLET
+   769px – 1024px
+========================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    :root {
+        --nav-width: 275px;
+    }
+
+
+    .navbar {
+        padding: 25px 18px;
+    }
+
+
+    .navbar-logo {
+        padding-bottom: 22px;
+    }
+
+
+    .navbar-link {
+        min-height: 46px;
+
+        font-size: 0.88rem;
+    }
+
+
+    .menu-dropdown a {
+        font-size: 0.8rem;
+    }
+
+
+    .navbar-toggle {
+        top: 18px;
+        left: 18px;
+
+        width: 46px;
+        height: 46px;
+    }
+
+
+    .navbar-toggle.active {
+        left: calc(var(--nav-width) - 64px);
+    }
+
+}
+
+
+/* =========================================
+   CELULAR GRANDE
+   481px – 768px
+========================================= */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    :root {
+        --nav-width: min(82vw, 300px);
+    }
+
+
+    .navbar {
+        padding: 22px 17px;
+    }
+
+
+    .navbar-logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .navbar-link {
+        min-height: 50px;
+
+        padding: 13px 14px;
+
+        font-size: 0.88rem;
+    }
+
+
+    .menu-dropdown a {
+        min-height: 44px;
+
+        padding: 10px 12px;
+
+        font-size: 0.82rem;
+    }
+
+
+    .navbar-toggle {
+        top: 16px;
+        left: 16px;
+
+        width: 46px;
+        height: 46px;
+    }
+
+
+    .navbar-toggle.active {
+        left: calc(var(--nav-width) - 62px);
+    }
+
+}
+
+
+/* =========================================
+   CELULAR
+   376px – 480px
+========================================= */
+
+@media (min-width: 376px) and (max-width: 480px) {
+
+    :root {
+        --nav-width: min(84vw, 290px);
+    }
+
+
+    .navbar {
+        padding: 20px 15px;
+    }
+
+
+    .navbar-logo {
+        gap: 11px;
+
+        padding: 7px 5px 20px;
+    }
+
+
+    .navbar-logo img {
+        width: 47px;
+        height: 47px;
+    }
+
+
+    .navbar-logo span {
+        font-size: 0.9rem;
+    }
+
+
+    .navbar-logo strong {
+        font-size: 1rem;
+    }
+
+
+    .navbar-link {
+        min-height: 49px;
+
+        padding: 12px;
+
+        font-size: 0.84rem;
+    }
+
+
+    .navbar-toggle {
+        top: 14px;
+        left: 14px;
+
+        width: 44px;
+        height: 44px;
+    }
+
+
+    .navbar-toggle.active {
+        left: calc(var(--nav-width) - 59px);
+    }
+
+}
+
+
+/* =========================================
+   CELULAR PEQUEÑO
+   320px – 375px
+========================================= */
+
+@media (max-width: 375px) {
+
+    :root {
+        --nav-width: min(88vw, 280px);
+    }
+
+
+    .navbar {
+        padding: 18px 13px;
+    }
+
+
+    .navbar-logo {
+        gap: 9px;
+
+        padding: 5px 4px 18px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .navbar-logo img {
+        width: 43px;
+        height: 43px;
+    }
+
+
+    .navbar-logo span {
+        font-size: 0.82rem;
+    }
+
+
+    .navbar-logo strong {
+        font-size: 0.92rem;
+    }
+
+
+    .navbar-link {
+        min-height: 47px;
+
+        padding: 11px 10px;
+
+        gap: 10px;
+
+        font-size: 0.8rem;
+    }
+
+
+    .navbar-link i {
+        width: 18px;
+        font-size: 0.86rem;
+    }
+
+
+    .menu-trigger>span {
+        gap: 10px;
+    }
+
+
+    .menu-dropdown {
+        margin-left: 11px;
+    }
+
+
+    .menu-dropdown a {
+        min-height: 41px;
+
+        padding: 8px 9px;
+
+        gap: 8px;
+
+        font-size: 0.76rem;
+    }
+
+
+    .menu-dropdown a i {
+        width: 15px;
+        font-size: 0.7rem;
+    }
+
+
+    .navbar-toggle {
+        top: 12px;
+        left: 12px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+
+    .navbar-toggle.active {
+        left: calc(var(--nav-width) - 56px);
+    }
+
+}
+
+
+/* =========================================
+   CELULAR HORIZONTAL
+========================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .navbar {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+
+    .navbar-logo {
+        padding-bottom: 12px;
+        margin-bottom: 8px;
+    }
+
+
+    .navbar-logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .navbar-link {
+        min-height: 39px;
+
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+
+    .menu-dropdown a {
+        min-height: 34px;
+
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+
+
+    .navbar-toggle {
+        top: 10px;
+    }
+
+}
+
+
+/* =========================================
+   PANTALLAS GRANDES
+   1440px+
+========================================= */
+
+@media (min-width: 1440px) {
+
+    :root {
+        --nav-width: 310px;
+    }
+
+
+    .navbar {
+        padding: 32px 24px;
+    }
+
+
+    .navbar-logo img {
+        width: 58px;
+        height: 58px;
+    }
+
+
+    .navbar-link {
+        min-height: 51px;
+
+        font-size: 0.94rem;
+    }
+
+
+    .navbar-toggle {
+        width: 50px;
+        height: 50px;
+
+        top: 22px;
+        left: 22px;
+    }
+
+
+    .navbar-toggle.active {
+        left: calc(var(--nav-width) - 72px);
+    }
+
+}
+
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .navbar,
+    .navbar-toggle,
+    .navbar-link,
+    .menu-dropdown,
+    .menu-arrow,
+    .navbar-overlay {
+        transition: none;
+    }
+
+}
+
+
+/* =========================================
+   DISPOSITIVOS TÁCTILES
+========================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .navbar-link:hover {
+        transform: none;
+    }
+
+
+    .navbar-toggle:hover {
+        transform: none;
+    }
+
+
+    .menu-dropdown a:hover {
+        padding-left: 12px;
+    }
+
+
+    .navbar-link,
+    .menu-dropdown a,
+    .navbar-toggle {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+}

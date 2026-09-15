@@ -1,0 +1,1285 @@
+/* =========================================================
+   LEÑA & SABOR
+   ESTILOS DE PÁGINAS DEL MENÚ
+========================================================= */
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+========================================================= */
+
+.menu-page {
+    width: 100%;
+    max-width: 1280px;
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    padding-top: 20px;
+    padding-bottom: 80px;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   ENCABEZADO DE CATEGORÍA
+========================================================= */
+
+.menu-page-header {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding:
+        clamp(90px, 13vh, 135px) 20px 35px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    animation:
+        menuHeaderAppear 0.8s ease both;
+}
+
+
+.menu-page-kicker {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--gold, #F4B400);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size:
+        clamp(0.68rem, 1vw, 0.82rem);
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.menu-page-header h1 {
+    margin: 0;
+
+    color: var(--ink, #F2E4C8);
+
+    font-family: "Playfair Display", serif;
+
+    font-size:
+        clamp(2rem, 5vw, 4.2rem);
+
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    overflow-wrap: break-word;
+}
+
+
+.menu-page-header p {
+    width: 100%;
+    max-width: 680px;
+
+    margin:
+        18px auto 0;
+
+    color: var(--ink-soft, #C9A87A);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size:
+        clamp(0.82rem, 1.4vw, 1rem);
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   PRODUCTOS
+========================================================= */
+
+.menu-products {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding:
+        0 clamp(14px, 3vw, 30px);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        clamp(18px, 2.5vw, 30px);
+
+    align-items: stretch;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TARJETAS NORMALES
+   ENTRADAS / PLATOS FUERTES
+========================================================= */
+
+.menu-product-card {
+    position: relative;
+
+    min-width: 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(145deg,
+            rgba(61, 36, 18, 0.96),
+            rgba(38, 22, 11, 0.96));
+
+    border:
+        1px solid var(--card-border,
+            rgba(244, 180, 0, 0.22));
+
+    border-radius:
+        clamp(14px, 2vw, 20px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+
+    animation:
+        productAppear 0.65s ease both;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.menu-product-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(244, 180, 0, 0.5);
+
+    box-shadow:
+        0 20px 42px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   IMAGEN NORMAL
+   ENTRADAS / PLATOS FUERTES
+========================================================= */
+
+.menu-product-image {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    overflow: hidden;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+}
+
+
+.menu-product-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+.menu-product-card:hover .menu-product-image img {
+    transform:
+        scale(1.045);
+}
+
+
+/* =========================================================
+   DEGRADADO DE IMÁGENES NORMALES
+========================================================= */
+
+.menu-product-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(to top,
+            rgba(25, 14, 7, 0.30),
+            transparent 45%);
+}
+
+
+/* =========================================================
+   CONTENIDO DE TARJETAS NORMALES
+========================================================= */
+
+.menu-product-content {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    padding:
+        clamp(17px, 2.2vw, 25px);
+
+    box-sizing: border-box;
+}
+
+
+.menu-product-content h2,
+.menu-product-content h3 {
+    margin: 0;
+
+    color:
+        var(--ink, #F2E4C8);
+
+    font-family:
+        "Playfair Display", serif;
+
+    font-size:
+        clamp(1.05rem, 1.8vw, 1.4rem);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
+}
+
+
+.menu-product-price {
+    margin-top: 8px;
+
+    color:
+        var(--gold, #F4B400);
+
+    font-family:
+        "Poppins", sans-serif;
+
+    font-size:
+        clamp(0.88rem, 1.3vw, 1rem);
+
+    font-weight: 700;
+}
+
+
+.menu-product-content p {
+    margin:
+        10px 0 0;
+
+    color:
+        var(--ink-soft, #C9A87A);
+
+    font-family:
+        "Poppins", sans-serif;
+
+    font-size:
+        clamp(0.76rem, 1.15vw, 0.9rem);
+
+    line-height: 1.65;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   =========================================================
+   BEBIDAS / CERVEZAS / REFRESCOS
+   IMAGEN LIBRE
+   SIN TARJETA
+   SIN FONDO
+   SIN BORDE
+   =========================================================
+========================================================= */
+
+
+/* =========================================================
+   CONTENEDOR LIBRE
+========================================================= */
+
+.bebida-card,
+.cerveza-card,
+.refresco-card {
+    position: relative;
+
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    overflow: visible !important;
+
+    transform: none !important;
+
+    animation:
+        productAppear 0.65s ease both;
+}
+
+
+/* =========================================================
+   ELIMINAR EFECTO DE TARJETA
+========================================================= */
+
+.bebida-card:hover,
+.cerveza-card:hover,
+.refresco-card:hover {
+    transform: none !important;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   IMAGEN LIBRE
+========================================================= */
+
+.bebida-image,
+.cerveza-image,
+.refresco-image {
+    position: relative;
+
+    width: 100%;
+
+    height: 390px;
+    min-height: 390px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    overflow: visible !important;
+
+    aspect-ratio: auto;
+}
+
+
+/* =========================================================
+   ELIMINAR FONDOS Y DEGRADADOS
+========================================================= */
+
+.bebida-image::before,
+.bebida-image::after,
+
+.cerveza-image::before,
+.cerveza-image::after,
+
+.refresco-image::before,
+.refresco-image::after {
+    content: none !important;
+
+    display: none !important;
+
+    background: none !important;
+}
+
+
+/* =========================================================
+   PNG TRANSPARENTE
+========================================================= */
+
+.bebida-image img,
+.cerveza-image img,
+.refresco-image img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    filter:
+        drop-shadow(0 20px 18px rgba(0, 0, 0, 0.30));
+
+    transition:
+        transform 0.45s ease,
+        filter 0.45s ease;
+}
+
+
+/* =========================================================
+   EFECTO 3D
+========================================================= */
+
+.bebida-card:hover .bebida-image img,
+
+.cerveza-card:hover .cerveza-image img,
+
+.refresco-card:hover .refresco-image img {
+    transform:
+        translateY(-10px) scale(1.035);
+
+    filter:
+        drop-shadow(0 28px 24px rgba(0, 0, 0, 0.40));
+}
+
+
+/* =========================================================
+   HOJAS DECORATIVAS
+========================================================= */
+
+.bebida-image .drink-leaf,
+.cerveza-image .drink-leaf,
+.refresco-image .drink-leaf {
+    position: absolute;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    color:
+        var(--selva, #4CAF50);
+
+    opacity: 0.75;
+
+    text-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.35);
+
+    animation:
+        drinkLeafFloat 4s ease-in-out infinite;
+}
+
+
+.bebida-image .leaf-1,
+.cerveza-image .leaf-1,
+.refresco-image .leaf-1 {
+    top: 14%;
+
+    left: 10%;
+
+    transform:
+        rotate(-20deg);
+}
+
+
+.bebida-image .leaf-2,
+.cerveza-image .leaf-2,
+.refresco-image .leaf-2 {
+    right: 10%;
+
+    bottom: 16%;
+
+    transform:
+        rotate(25deg);
+}
+
+
+/* =========================================================
+   CONTENIDO DE BEBIDAS / CERVEZAS / REFRESCOS
+   SIN TARJETA
+========================================================= */
+
+.bebida-card .menu-product-content,
+.cerveza-card .menu-product-content,
+.refresco-card .menu-product-content {
+    width: 100%;
+
+    min-width: 0;
+
+    padding:
+        8px 15px 25px;
+
+    box-sizing: border-box;
+
+    background: transparent !important;
+
+    border: none !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    text-align: center;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   NOMBRE
+========================================================= */
+
+.bebida-card .menu-product-content h2,
+.bebida-card .menu-product-content h3,
+
+.cerveza-card .menu-product-content h2,
+.cerveza-card .menu-product-content h3,
+
+.refresco-card .menu-product-content h2,
+.refresco-card .menu-product-content h3 {
+    margin: 0;
+
+    color:
+        var(--ink, #F2E4C8);
+
+    font-family:
+        "Playfair Display", serif;
+
+    font-size:
+        clamp(1.2rem, 2vw, 1.5rem);
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   PRECIO
+========================================================= */
+
+.bebida-card .menu-product-price,
+.cerveza-card .menu-product-price,
+.refresco-card .menu-product-price {
+    margin-top: 7px;
+
+    color:
+        var(--gold, #F4B400);
+
+    font-family:
+        "Poppins", sans-serif;
+
+    font-size:
+        clamp(0.9rem, 1.4vw, 1rem);
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+========================================================= */
+
+.bebida-card .menu-product-content p,
+.cerveza-card .menu-product-content p,
+.refresco-card .menu-product-content p {
+    width: 100%;
+
+    max-width: 450px;
+
+    margin:
+        8px auto 0;
+
+    color:
+        var(--ink-soft, #C9A87A);
+
+    font-family:
+        "Poppins", sans-serif;
+
+    font-size:
+        clamp(0.78rem, 1.2vw, 0.9rem);
+
+    line-height: 1.6;
+
+    text-align: center;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   ANIMACIÓN DE HOJAS
+========================================================= */
+
+@keyframes drinkLeafFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform:
+            translateY(-8px) rotate(5deg);
+    }
+}
+
+
+/* =========================================================
+   APARICIÓN ESCALONADA
+========================================================= */
+
+.menu-product-card:nth-child(1) {
+    animation-delay: 0.08s;
+}
+
+
+.menu-product-card:nth-child(2) {
+    animation-delay: 0.16s;
+}
+
+
+.menu-product-card:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+
+.menu-product-card:nth-child(4) {
+    animation-delay: 0.32s;
+}
+
+
+.menu-product-card:nth-child(5) {
+    animation-delay: 0.40s;
+}
+
+
+.menu-product-card:nth-child(6) {
+    animation-delay: 0.48s;
+}
+
+
+.menu-product-card:nth-child(7) {
+    animation-delay: 0.56s;
+}
+
+
+.menu-product-card:nth-child(8) {
+    animation-delay: 0.64s;
+}
+
+
+/* =========================================================
+   TABLET
+   481px – 768px
+========================================================= */
+
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .menu-page {
+        padding-bottom: 60px;
+    }
+
+
+    .menu-page-header {
+        padding-top: 90px;
+
+        padding-bottom: 28px;
+    }
+
+
+    .menu-products {
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+
+        gap: 20px;
+    }
+
+
+    .menu-product-image {
+        aspect-ratio: 16 / 9;
+    }
+
+
+    .menu-product-content {
+        padding: 22px;
+    }
+
+
+    /* LIBRES */
+
+    .bebida-image,
+    .cerveza-image,
+    .refresco-image {
+        height: 320px;
+
+        min-height: 320px;
+
+        padding: 8px;
+    }
+
+
+    .bebida-image img,
+    .cerveza-image img,
+    .refresco-image img {
+        max-width: 85%;
+
+        max-height: 100%;
+    }
+
+
+    .bebida-image .drink-leaf,
+    .cerveza-image .drink-leaf,
+    .refresco-image .drink-leaf {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* =========================================================
+   CELULAR GRANDE
+   376px – 480px
+========================================================= */
+
+@media (min-width: 376px) and (max-width: 480px) {
+
+    .menu-page {
+        padding-bottom: 50px;
+    }
+
+
+    .menu-page-header {
+        padding-top: 82px;
+
+        padding-bottom: 25px;
+    }
+
+
+    .menu-page-kicker {
+        letter-spacing: 2.2px;
+    }
+
+
+    .menu-page-header h1 {
+        font-size:
+            clamp(1.9rem, 10vw, 2.7rem);
+    }
+
+
+    .menu-page-header p {
+        font-size: 0.82rem;
+
+        line-height: 1.6;
+    }
+
+
+    .menu-products {
+        grid-template-columns: 1fr;
+
+        padding-left: 15px;
+
+        padding-right: 15px;
+
+        gap: 17px;
+    }
+
+
+    /* TARJETAS NORMALES */
+
+    .menu-product-card {
+        border-radius: 15px;
+    }
+
+
+    .menu-product-image {
+        aspect-ratio: 16 / 10;
+    }
+
+
+    .menu-product-content {
+        padding: 18px;
+    }
+
+
+    .menu-product-content h2,
+    .menu-product-content h3 {
+        font-size: 1.15rem;
+    }
+
+
+    .menu-product-content p {
+        font-size: 0.8rem;
+    }
+
+
+    /* BEBIDAS / CERVEZAS / REFRESCOS */
+
+    .bebida-image,
+    .cerveza-image,
+    .refresco-image {
+        height: 290px;
+
+        min-height: 290px;
+
+        padding: 5px;
+    }
+
+
+    .bebida-image img,
+    .cerveza-image img,
+    .refresco-image img {
+        max-width: 82%;
+
+        max-height: 100%;
+    }
+
+
+    .bebida-card .menu-product-content,
+    .cerveza-card .menu-product-content,
+    .refresco-card .menu-product-content {
+        padding:
+            5px 10px 22px;
+    }
+
+
+    .bebida-image .drink-leaf,
+    .cerveza-image .drink-leaf,
+    .refresco-image .drink-leaf {
+        font-size: 1.25rem;
+    }
+}
+
+
+/* =========================================================
+   CELULAR PEQUEÑO
+   HASTA 375px
+========================================================= */
+
+@media (max-width: 375px) {
+
+    .menu-page {
+        padding-bottom: 42px;
+    }
+
+
+    .menu-page-header {
+        padding-top: 76px;
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+
+        padding-bottom: 20px;
+    }
+
+
+    .menu-page-kicker {
+        margin-bottom: 9px;
+
+        font-size: 0.65rem;
+
+        letter-spacing: 1.8px;
+    }
+
+
+    .menu-page-header h1 {
+        font-size:
+            clamp(1.75rem, 10vw, 2.35rem);
+    }
+
+
+    .menu-page-header p {
+        margin-top: 13px;
+
+        font-size: 0.76rem;
+
+        line-height: 1.55;
+    }
+
+
+    .menu-products {
+        grid-template-columns: 1fr;
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+
+        gap: 14px;
+    }
+
+
+    /* TARJETAS NORMALES */
+
+    .menu-product-card {
+        border-radius: 13px;
+    }
+
+
+    .menu-product-image {
+        aspect-ratio: 15 / 10;
+    }
+
+
+    .menu-product-content {
+        padding: 16px;
+    }
+
+
+    .menu-product-content h2,
+    .menu-product-content h3 {
+        font-size: 1.04rem;
+    }
+
+
+    .menu-product-price {
+        font-size: 0.84rem;
+    }
+
+
+    .menu-product-content p {
+        margin-top: 8px;
+
+        font-size: 0.74rem;
+
+        line-height: 1.55;
+    }
+
+
+    /* LIBRES */
+
+    .bebida-image,
+    .cerveza-image,
+    .refresco-image {
+        height: 270px;
+
+        min-height: 270px;
+
+        padding: 5px;
+    }
+
+
+    .bebida-image img,
+    .cerveza-image img,
+    .refresco-image img {
+        max-width: 82%;
+
+        max-height: 100%;
+    }
+
+
+    .bebida-card .menu-product-content,
+    .cerveza-card .menu-product-content,
+    .refresco-card .menu-product-content {
+        padding:
+            5px 8px 20px;
+    }
+
+
+    .bebida-card .menu-product-content h2,
+    .bebida-card .menu-product-content h3,
+
+    .cerveza-card .menu-product-content h2,
+    .cerveza-card .menu-product-content h3,
+
+    .refresco-card .menu-product-content h2,
+    .refresco-card .menu-product-content h3 {
+        font-size: 1.08rem;
+    }
+
+
+    .bebida-image .drink-leaf,
+    .cerveza-image .drink-leaf,
+    .refresco-image .drink-leaf {
+        font-size: 1.15rem;
+    }
+}
+
+
+/* =========================================================
+   CELULAR HORIZONTAL
+========================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    .menu-page-header {
+        padding-top: 75px;
+    }
+
+
+    .menu-products {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .menu-product-image {
+        aspect-ratio: 16 / 9;
+    }
+
+
+    .bebida-image,
+    .cerveza-image,
+    .refresco-image {
+        height: 280px;
+
+        min-height: 280px;
+    }
+
+
+    .bebida-image img,
+    .cerveza-image img,
+    .refresco-image img {
+        max-width: 80%;
+    }
+}
+
+
+/* =========================================================
+   PANTALLAS GRANDES
+   1025px – 1439px
+========================================================= */
+
+@media (min-width: 1025px) and (max-width: 1439px) {
+
+    .menu-products {
+        max-width: 1200px;
+
+        gap: 30px;
+    }
+
+
+    .bebida-image,
+    .cerveza-image,
+    .refresco-image {
+        height: 390px;
+
+        min-height: 390px;
+    }
+}
+
+
+/* =========================================================
+   PANTALLAS GRANDES
+   1440px+
+========================================================= */
+
+@media (min-width: 1440px) {
+
+    .menu-page {
+        max-width: 1450px;
+    }
+
+
+    .menu-products {
+        max-width: 1250px;
+
+        gap: 32px;
+    }
+
+
+    .menu-product-content {
+        padding: 27px;
+    }
+
+
+    .menu-product-content h2,
+    .menu-product-content h3 {
+        font-size: 1.45rem;
+    }
+
+
+    .bebida-image,
+    .cerveza-image,
+    .refresco-image {
+        height: 420px;
+
+        min-height: 420px;
+    }
+
+
+    .bebida-image img,
+    .cerveza-image img,
+    .refresco-image img {
+        max-width: 92%;
+    }
+}
+
+
+/* =========================================================
+   MONITORES MUY GRANDES
+   1920px+
+========================================================= */
+
+@media (min-width: 1920px) {
+
+    .menu-page {
+        max-width: 1700px;
+    }
+
+
+    .menu-products {
+        max-width: 1350px;
+
+        gap: 35px;
+    }
+
+
+    .menu-product-image {
+        aspect-ratio: 16 / 10;
+    }
+
+
+    .bebida-image,
+    .cerveza-image,
+    .refresco-image {
+        height: 460px;
+
+        min-height: 460px;
+    }
+
+
+    .bebida-image img,
+    .cerveza-image img,
+    .refresco-image img {
+        max-width: 94%;
+    }
+}
+
+
+/* =========================================================
+   TÁCTIL
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    /* TARJETAS NORMALES */
+
+    .menu-product-card:hover {
+        transform: none;
+
+        box-shadow:
+            0 12px 30px rgba(0, 0, 0, 0.25);
+
+        border-color:
+            var(--card-border,
+                rgba(244, 180, 0, 0.22));
+    }
+
+
+    .menu-product-card:hover .menu-product-image img {
+        transform: none;
+    }
+
+
+    /* LIBRES */
+
+    .bebida-card:hover,
+    .cerveza-card:hover,
+    .refresco-card:hover {
+        transform: none !important;
+
+        background: transparent !important;
+
+        border: none !important;
+
+        box-shadow: none !important;
+    }
+
+
+    .bebida-card:hover .bebida-image img,
+
+    .cerveza-card:hover .cerveza-image img,
+
+    .refresco-card:hover .refresco-image img {
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   REDUCIR MOVIMIENTO
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .menu-page-header,
+    .menu-product-card,
+    .menu-product-image img,
+
+    .bebida-card,
+    .cerveza-card,
+    .refresco-card,
+
+    .bebida-image img,
+    .cerveza-image img,
+    .refresco-image img {
+        animation: none;
+
+        transition: none;
+    }
+
+
+    .bebida-image .drink-leaf,
+    .cerveza-image .drink-leaf,
+    .refresco-image .drink-leaf {
+        animation: none;
+    }
+}

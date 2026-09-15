@@ -1,0 +1,690 @@
+ /* =========================================================
+   LEÑA & SABOR
+   RESPONSIVE GENERAL
+   Celular · Tablet · Laptop · PC
+========================================================= */
+
+
+ /* =========================================================
+   BASE RESPONSIVE
+========================================================= */
+
+ html {
+     width: 100%;
+     max-width: 100%;
+     overflow-x: hidden;
+
+     scroll-behavior: smooth;
+ }
+
+
+ body {
+     width: 100%;
+     max-width: 100%;
+     min-width: 0;
+
+     overflow-x: hidden;
+ }
+
+
+ /* Evita que elementos grandes provoquen
+   desplazamiento horizontal */
+
+ img,
+ video,
+ canvas,
+ svg {
+     max-width: 100%;
+ }
+
+
+ img {
+     height: auto;
+ }
+
+
+ /* =========================================================
+   CONTENEDORES GENERALES
+========================================================= */
+
+ .menu-body,
+ .menu-page,
+ .hero,
+ .hero-wrap {
+     width: 100%;
+     max-width: 100%;
+ }
+
+
+ .menu-page,
+ .menu-body {
+     padding-left: var(--page-margin, clamp(14px, 4vw, 48px));
+     padding-right: var(--page-margin, clamp(14px, 4vw, 48px));
+ }
+
+
+ /* =========================================================
+   HERO
+========================================================= */
+
+ .hero,
+ #heroWrap {
+     min-height: 100svh;
+
+     min-height: 100dvh;
+
+     padding:
+         clamp(80px, 12vh, 130px) clamp(20px, 5vw, 70px) clamp(50px, 8vh, 90px);
+
+     box-sizing: border-box;
+ }
+
+
+ .hero img,
+ #heroWrap img {
+     max-width: min(360px, 70vw);
+
+     width: 100%;
+
+     object-fit: contain;
+ }
+
+
+ .hero h1,
+ #heroWrap h1 {
+     font-size:
+         clamp(2.3rem, 6vw, 5.5rem);
+
+     line-height: 0.95;
+
+     max-width: 100%;
+ }
+
+
+ .hero p,
+ #heroWrap p {
+     max-width: 700px;
+
+     font-size:
+         clamp(0.9rem, 1.5vw, 1.15rem);
+
+     line-height: 1.7;
+ }
+
+
+ /* =========================================================
+   ENCABEZADOS DE PÁGINAS
+========================================================= */
+
+ .menu-page-header {
+     width: 100%;
+     max-width: 950px;
+
+     margin-left: auto;
+     margin-right: auto;
+
+     padding-top:
+         clamp(90px, 12vh, 135px);
+
+     padding-bottom:
+         clamp(20px, 4vw, 45px);
+
+     text-align: center;
+ }
+
+
+ .menu-page-header h1 {
+     font-size:
+         clamp(2rem, 5vw, 4.2rem);
+
+     line-height: 1.05;
+
+     overflow-wrap: break-word;
+ }
+
+
+ .menu-page-header p {
+     max-width: 700px;
+
+     margin-left: auto;
+     margin-right: auto;
+
+     font-size:
+         clamp(0.86rem, 1.4vw, 1.05rem);
+
+     line-height: 1.7;
+ }
+
+
+ /* =========================================================
+   MENÚ - PRODUCTOS
+========================================================= */
+
+ .menu-products {
+     width: 100%;
+     max-width: 1200px;
+
+     margin-left: auto;
+     margin-right: auto;
+
+     display: grid;
+
+     grid-template-columns:
+         repeat(2, minmax(0, 1fr));
+
+     gap:
+         clamp(18px, 3vw, 30px);
+ }
+
+
+ .menu-product-card {
+     min-width: 0;
+
+     width: 100%;
+
+     overflow: hidden;
+ }
+
+
+ .menu-product-image {
+     width: 100%;
+
+     aspect-ratio: 16 / 10;
+
+     object-fit: cover;
+ }
+
+
+ .menu-product-content {
+     min-width: 0;
+ }
+
+
+ .menu-product-content h2,
+ .menu-product-content h3 {
+     overflow-wrap: anywhere;
+
+     font-size:
+         clamp(1rem, 2vw, 1.35rem);
+ }
+
+
+ .menu-product-content p {
+     overflow-wrap: anywhere;
+
+     font-size:
+         clamp(0.78rem, 1.2vw, 0.92rem);
+
+     line-height: 1.6;
+ }
+
+
+ /* =========================================================
+   CONTACTO
+========================================================= */
+
+ .contact-grid {
+     width: 100%;
+
+     max-width: 1050px;
+
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+
+ .contact-card {
+     min-width: 0;
+
+     overflow: hidden;
+ }
+
+
+ .contact-content {
+     min-width: 0;
+ }
+
+
+ .contact-content h2,
+ .contact-content p,
+ .contact-action {
+     overflow-wrap: anywhere;
+ }
+
+
+ /* =========================================================
+   FOOTER
+========================================================= */
+
+ .site-footer {
+     width: 100%;
+
+     padding:
+         28px var(--page-margin, 4vw);
+
+     box-sizing: border-box;
+
+     text-align: center;
+ }
+
+
+ .site-footer p {
+     max-width: 100%;
+
+     margin: 0 auto;
+
+     font-size:
+         clamp(0.72rem, 1.2vw, 0.9rem);
+
+     line-height: 1.6;
+ }
+
+
+ /* =========================================================
+   TABLET HORIZONTAL
+   769px – 1024px
+========================================================= */
+
+ @media (min-width: 769px) and (max-width: 1024px) {
+
+     .hero,
+     #heroWrap {
+         padding-left: 70px;
+         padding-right: 70px;
+     }
+
+
+     .menu-products {
+         gap: 20px;
+     }
+
+
+     .menu-page-header {
+         padding-top: 100px;
+     }
+
+ }
+
+
+ /* =========================================================
+   TABLET VERTICAL
+   481px – 768px
+========================================================= */
+
+ @media (min-width: 481px) and (max-width: 768px) {
+
+     :root {
+         --page-margin: 24px;
+     }
+
+
+     .hero,
+     #heroWrap {
+         min-height: 100svh;
+
+         padding:
+             85px 24px 55px;
+     }
+
+
+     .hero img,
+     #heroWrap img {
+         max-width: 280px;
+     }
+
+
+     .menu-page-header {
+         padding-top: 90px;
+         padding-bottom: 30px;
+     }
+
+
+     .menu-products {
+         grid-template-columns: 1fr;
+
+         max-width: 650px;
+     }
+
+
+     .menu-product-image {
+         aspect-ratio: 16 / 9;
+     }
+
+
+     .contact-grid {
+         grid-template-columns: 1fr;
+
+         max-width: 650px;
+     }
+
+ }
+
+
+ /* =========================================================
+   CELULAR GRANDE
+   376px – 480px
+========================================================= */
+
+ @media (min-width: 376px) and (max-width: 480px) {
+
+     :root {
+         --page-margin: 17px;
+     }
+
+
+     .hero,
+     #heroWrap {
+         min-height: 100svh;
+
+         padding:
+             78px 17px 45px;
+     }
+
+
+     .hero img,
+     #heroWrap img {
+         max-width: 235px;
+     }
+
+
+     .hero h1,
+     #heroWrap h1 {
+         font-size:
+             clamp(2rem, 11vw, 3.2rem);
+     }
+
+
+     .hero p,
+     #heroWrap p {
+         font-size: 0.86rem;
+
+         line-height: 1.6;
+     }
+
+
+     .menu-page-header {
+         padding-top: 82px;
+         padding-bottom: 24px;
+     }
+
+
+     .menu-page-header h1 {
+         font-size:
+             clamp(1.9rem, 10vw, 2.8rem);
+     }
+
+
+     .menu-page-header p {
+         font-size: 0.83rem;
+     }
+
+
+     .menu-products {
+         grid-template-columns: 1fr;
+
+         gap: 17px;
+     }
+
+
+     .menu-product-card {
+         border-radius: 15px;
+     }
+
+
+     .menu-product-image {
+         aspect-ratio: 16 / 10;
+     }
+
+
+     .contact-grid {
+         grid-template-columns: 1fr;
+
+         gap: 16px;
+     }
+
+ }
+
+
+ /* =========================================================
+   CELULAR PEQUEÑO
+   Hasta 375px
+========================================================= */
+
+ @media (max-width: 375px) {
+
+     :root {
+         --page-margin: 13px;
+     }
+
+
+     .hero,
+     #heroWrap {
+         min-height: 100svh;
+
+         padding:
+             72px 13px 38px;
+     }
+
+
+     .hero img,
+     #heroWrap img {
+         max-width: 200px;
+     }
+
+
+     .hero h1,
+     #heroWrap h1 {
+         font-size:
+             clamp(1.8rem, 11vw, 2.7rem);
+
+         line-height: 0.98;
+     }
+
+
+     .hero p,
+     #heroWrap p {
+         font-size: 0.8rem;
+
+         line-height: 1.55;
+     }
+
+
+     .menu-page-header {
+         padding-top: 75px;
+         padding-bottom: 20px;
+     }
+
+
+     .menu-page-kicker {
+         font-size: 0.7rem;
+     }
+
+
+     .menu-page-header h1 {
+         font-size:
+             clamp(1.75rem, 10vw, 2.4rem);
+     }
+
+
+     .menu-page-header p {
+         font-size: 0.78rem;
+
+         line-height: 1.55;
+     }
+
+
+     .menu-products {
+         grid-template-columns: 1fr;
+
+         gap: 14px;
+     }
+
+
+     .menu-product-image {
+         aspect-ratio: 15 / 10;
+     }
+
+
+     .contact-grid {
+         grid-template-columns: 1fr;
+
+         padding-left: 0;
+         padding-right: 0;
+     }
+
+
+     .site-footer {
+         padding:
+             22px 13px;
+     }
+
+ }
+
+
+ /* =========================================================
+   CELULAR EN HORIZONTAL
+========================================================= */
+
+ @media (max-height: 500px) and (orientation: landscape) {
+
+     .hero,
+     #heroWrap {
+         min-height: auto;
+
+         padding-top: 70px;
+         padding-bottom: 45px;
+     }
+
+
+     .hero img,
+     #heroWrap img {
+         max-width: 170px;
+     }
+
+
+     .menu-page-header {
+         padding-top: 75px;
+     }
+
+
+     .menu-products {
+         grid-template-columns:
+             repeat(2, minmax(0, 1fr));
+     }
+
+ }
+
+
+ /* =========================================================
+   PANTALLAS GRANDES
+   1440px+
+========================================================= */
+
+ @media (min-width: 1440px) {
+
+     :root {
+         --page-margin: 60px;
+     }
+
+
+     .menu-products {
+         max-width: 1250px;
+     }
+
+
+     .hero img,
+     #heroWrap img {
+         max-width: 400px;
+     }
+
+
+     .menu-page-header {
+         max-width: 1050px;
+     }
+
+ }
+
+
+ /* =========================================================
+   MONITORES MUY GRANDES
+   1920px+
+========================================================= */
+
+ @media (min-width: 1920px) {
+
+     .menu-products {
+         max-width: 1350px;
+     }
+
+
+     .menu-page-header {
+         max-width: 1150px;
+     }
+
+
+     .hero h1,
+     #heroWrap h1 {
+         font-size: 5.5rem;
+     }
+
+ }
+
+
+ /* =========================================================
+   ACCESIBILIDAD
+========================================================= */
+
+ @media (prefers-reduced-motion: reduce) {
+
+     html {
+         scroll-behavior: auto;
+     }
+
+ }
+
+
+ /* =========================================================
+   PANTALLAS TÁCTILES
+========================================================= */
+
+ @media (hover: none) and (pointer: coarse) {
+
+     button,
+     a {
+         -webkit-tap-highlight-color: transparent;
+     }
+
+
+     .menu-product-card:hover {
+         transform: none;
+     }
+
+ }
+
+
+ /* =========================================================
+   EVITAR DESBORDAMIENTO DE TEXTO
+========================================================= */
+
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ a,
+ span {
+     max-width: 100%;
+
+     overflow-wrap: break-word;
+ }
+
+
+ /* =========================================================
+   SEGURIDAD PARA ELEMENTOS ABSOLUTOS
+========================================================= */
+
+ * {
+     box-sizing: border-box;
+ }

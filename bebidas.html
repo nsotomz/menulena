@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SODAS | Leña & Sabor</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         FONDO
+    ========================================== -->
+
+    <div class="background-overlay"></div>
+
+
+    <!-- =========================================
+         BARRA LATERAL
+    ========================================== -->
+
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
+
+        <!-- LOGO -->
+        <a href="index.html" class="navbar-logo">
+            <span>LEÑA</span>
+            <span>&amp; SABOR</span>
+        </a>
+
+
+        <ul class="navbar-links">
+
+            <!-- INICIO -->
+            <li>
+                <a href="index.html" class="navbar-link">
+                    <i class="fa-solid fa-house"></i>
+                    <span>INICIO</span>
+                </a>
+            </li>
+
+
+            <!-- MENÚ -->
+            <li class="navbar-menu-item">
+
+                <button class="navbar-link menu-trigger active" id="menuTrigger" type="button" aria-expanded="true"
+                    aria-controls="menuDropdown">
+
+                    <span>
+                        <i class="fa-solid fa-utensils"></i>
+                        MENÚ
+                    </span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+
+                <div class="menu-dropdown open" id="menuDropdown">
+
+                    <!-- ENTRADAS -->
+                    <a href="entradas.html">
+                        <i class="fa-solid fa-bowl-food"></i>
+                        Entradas
+                    </a>
+
+
+                    <!-- PLATOS FUERTES -->
+                    <a href="fuertes.html">
+                        <i class="fa-solid fa-drumstick-bite"></i>
+                        Platos fuertes
+                    </a>
+
+
+                    <!-- BEBIDAS -->
+                    <a href="bebidas.html" class="active">
+                        <i class="fa-solid fa-mug-hot"></i>
+                        Sodas
+                    </a>
+
+
+                    <!-- CERVEZAS -->
+                    <a href="cervezas.html">
+                        <i class="fa-solid fa-beer-mug-empty"></i>
+                        Cervezas
+                    </a>
+
+
+                    <!-- REFRESCOS -->
+                    <a href="refrescos.html">
+                        <i class="fa-solid fa-glass-water"></i>
+                        Refrescos
+                    </a>
+
+                </div>
+
+            </li>
+
+
+            <!-- CONTACTO -->
+            <li>
+                <a href="contacto.html" class="navbar-link">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>CONTACTO</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =========================================
+         BOTÓN HAMBURGUESA
+    ========================================== -->
+
+    <button class="navbar-toggle" id="navbarToggle" type="button" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="navbar">
+
+        <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+
+    <!-- =========================================
+         CONTENIDO
+    ========================================== -->
+
+    <main class="menu-page bebidas-page">
+
+
+        <!-- =========================================
+             ENCABEZADO
+        ========================================== -->
+
+        <header class="menu-page-header">
+
+            <span class="menu-page-kicker">
+                LEÑA &amp; SABOR
+            </span>
+
+            <h1>
+                SODAS
+            </h1>
+
+            <p>
+                El complemento perfecto para acompañar cada plato.
+            </p>
+
+        </header>
+
+
+        <!-- =========================================
+             PRODUCTOS
+        ========================================== -->
+
+        <section class="menu-products bebidas-products">
+
+
+            <!-- =====================================
+                 BEBIDA 1
+            ====================================== -->
+
+            <article class="menu-product-card bebida-card">
+
+                <div class="menu-product-image bebida-image">
+
+                    <span class="drink-leaf leaf-1" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <span class="drink-leaf leaf-2" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <img src="img/SODA CAUCA.PNG" alt="Limonada Natural" loading="lazy">
+
+                </div>
+
+
+                <div class="menu-product-content">
+
+                    <div class="menu-product-title">
+
+                        <h2>
+                            Soda Cauca
+                        </h2>
+
+                        <span class="menu-product-price">
+                            $15.000
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Refrescante limonada preparada al momento
+                        con ingredientes frescos.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =====================================
+                 BEBIDA 2
+            ====================================== -->
+
+            <article class="menu-product-card bebida-card">
+
+                <div class="menu-product-image bebida-image">
+
+                    <span class="drink-leaf leaf-1" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <span class="drink-leaf leaf-2" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <img src="img/SODA CALI.PNG" alt="Limonada Especial" loading="lazy">
+
+                </div>
+
+
+                <div class="menu-product-content">
+
+                    <div class="menu-product-title">
+
+                        <h2>
+                            Soda Cali
+                        </h2>
+
+                        <span class="menu-product-price">
+                            $15.000
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Una mezcla refrescante con el toque especial
+                        de nuestra casa.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =====================================
+                 BEBIDA 3
+            ====================================== -->
+
+            <article class="menu-product-card bebida-card">
+
+                <div class="menu-product-image bebida-image">
+
+                    <span class="drink-leaf leaf-1" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <span class="drink-leaf leaf-2" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <img src="img/SODA LEÑA Y SABOR.PNG" alt="Jugo Natural" loading="lazy">
+
+                </div>
+
+
+                <div class="menu-product-content">
+
+                    <div class="menu-product-title">
+
+                        <h2>
+                            Soda Leña y Sabor Casa Oma
+                        </h2>
+
+                        <span class="menu-product-price">
+                            $17.000
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Jugo natural preparado con fruta fresca
+                        y servido bien frío.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- =====================================
+                 BEBIDA 4
+            ====================================== -->
+
+            <article class="menu-product-card bebida-card">
+
+                <div class="menu-product-image bebida-image">
+
+                    <span class="drink-leaf leaf-1" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <span class="drink-leaf leaf-2" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <img src="img/SODA MOCOA.PNG" alt="Bebida de la Casa" loading="lazy">
+
+                </div>
+
+
+                <div class="menu-product-content">
+
+                    <div class="menu-product-title">
+
+                        <h2>
+                            Soda Mocoa
+                        </h2>
+
+                        <span class="menu-product-price">
+                            $15.000
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Una bebida especial para acompañar
+                        nuestros platos y disfrutar cada momento.
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!-- =====================================
+                 BEBIDA 5
+            ====================================== -->
+
+            <article class="menu-product-card bebida-card">
+
+                <div class="menu-product-image bebida-image">
+
+                    <span class="drink-leaf leaf-1" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <span class="drink-leaf leaf-2" aria-hidden="true">
+                        🌿
+                    </span>
+
+                    <img src="img/SODA CUCUTA.PNG" alt="Bebida de la Casa" loading="lazy">
+
+                </div>
+
+
+                <div class="menu-product-content">
+
+                    <div class="menu-product-title">
+
+                        <h2>
+                            Soda Cucuta
+                        </h2>
+
+                        <span class="menu-product-price">
+                            $15.000
+                        </span>
+
+                    </div>
+
+
+                    <p>
+                        Una bebida especial para acompañar
+                        nuestros platos y disfrutar cada momento.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         SCRIPTS
+    ========================================== -->
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/leaves.js"></script>
+    <script src="js/navbar.js"></script>
+
+</body>
+
+</html>
