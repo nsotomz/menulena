@@ -860,10 +860,8 @@
    CONTACTO - SEPARACIÓN DINÁMICA
 ========================================================= */
 
-/* 
-   MENÚ CERRADO:
-   Contacto queda inmediatamente debajo de MENÚ.
-*/
+/* MENÚ CERRADO */
+
 .navbar-contact {
     margin-top: 0;
     padding-top: 0;
@@ -876,11 +874,9 @@
 }
 
 
-/*
-   MENÚ ABIERTO:
-   Contacto se separa de las categorías.
-*/
-.navbar-menu-item:has(.menu-dropdown.open)+.navbar-contact {
+/* MENÚ ABIERTO */
+
+.navbar-menu-item.menu-open+.navbar-contact {
     margin-top: 18px;
     padding-top: 18px;
     border-top: 1px solid rgba(244, 180, 0, 0.18);

@@ -1,147 +1,235 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    /* =====================================================
+       ELEMENTOS
+    ====================================================== */
+
     const navbar = document.getElementById("navbar");
     const navbarToggle = document.getElementById("navbarToggle");
-    const menuTrigger = document.getElementById("menuTrigger");
+    const menuTrigger = document.querySelector(".menu-trigger");
     const menuDropdown = document.getElementById("menuDropdown");
 
     if (!navbar || !navbarToggle) {
+        console.error("Navbar: no se encontraron los elementos principales.");
         return;
     }
 
 
-    /* =========================================
-       OVERLAY
-    ========================================= */
+    /* =====================================================
+       CREAR OVERLAY SI NO EXISTE
+    ====================================================== */
 
-    let overlay = document.querySelector(".navbar-overlay");
+    let navbarOverlay = document.querySelector(".navbar-overlay");
 
-    if (!overlay) {
-        overlay = document.createElement("div");
-        overlay.className = "navbar-overlay";
-        document.body.appendChild(overlay);
+    if (!navbarOverlay) {
+
+        navbarOverlay = document.createElement("div");
+
+        navbarOverlay.className = "navbar-overlay";
+
+        document.body.appendChild(navbarOverlay);
     }
 
 
-    /* =========================================
-       ICONO DEL BOTÓN
-    ========================================= */
-
-    const toggleIcon = navbarToggle.querySelector("i");
-
-
-    /* =========================================
-       ABRIR NAVBAR
-    ========================================= */
+    /* =====================================================
+       ABRIR / CERRAR NAVBAR
+    ====================================================== */
 
     function openNavbar() {
 
         navbar.classList.add("open");
-        overlay.classList.add("show");
+
         navbarToggle.classList.add("active");
+
+        navbarOverlay.classList.add("show");
+
+        navbarToggle.setAttribute("aria-expanded", "true");
+
+        navbarToggle.setAttribute("aria-label", "Cerrar menú");
 
         document.body.classList.add("navbar-open");
 
-        if (toggleIcon) {
-            toggleIcon.classList.remove("fa-bars");
-            toggleIcon.classList.add("fa-xmark");
-        }
-
-        navbarToggle.setAttribute(
-            "aria-label",
-            "Cerrar menú"
-        );
-
-        navbarToggle.setAttribute(
-            "aria-expanded",
-            "true"
-        );
     }
 
-
-    /* =========================================
-       CERRAR NAVBAR
-    ========================================= */
 
     function closeNavbar() {
 
         navbar.classList.remove("open");
-        overlay.classList.remove("show");
+
         navbarToggle.classList.remove("active");
+
+        navbarOverlay.classList.remove("show");
+
+        navbarToggle.setAttribute("aria-expanded", "false");
+
+        navbarToggle.setAttribute("aria-label", "Abrir menú");
 
         document.body.classList.remove("navbar-open");
 
-        if (toggleIcon) {
-            toggleIcon.classList.remove("fa-xmark");
-            toggleIcon.classList.add("fa-bars");
-        }
+        closeMenu();
 
-        navbarToggle.setAttribute(
-            "aria-label",
-            "Abrir menú"
-        );
-
-        navbarToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
     }
 
 
-    /* =========================================
-       ABRIR / CERRAR CON BOTÓN
-    ========================================= */
+    function toggleNavbar() {
+
+        if (navbar.classList.contains("open")) {
+
+            closeNavbar();
+
+        } else {
+
+            openNavbar();
+
+        }
+
+    }
+
+
+    /* =====================================================
+       BOTÓN HAMBURGUESA
+    ====================================================== */
 
     navbarToggle.addEventListener("click", (event) => {
 
+        event.preventDefault();
+
         event.stopPropagation();
 
-        if (navbar.classList.contains("open")) {
-            closeNavbar();
-        } else {
-            openNavbar();
-        }
+        toggleNavbar();
 
     });
 
 
-    /* =========================================
-       SUBMENÚ "MENÚ"
-    ========================================= */
+    /* =====================================================
+       MENÚ PRINCIPAL
+    ====================================================== */
 
-    if (menuTrigger && menuDropdown) {
+    function openMenu() {
+
+        if (!menuTrigger || !menuDropdown) {
+            console.error("Navbar: no se encontró el menú desplegable.");
+            return;
+        }
+
+        menuDropdown.classList.add("open");
+
+        menuTrigger.classList.add("expanded");
+
+        menuTrigger.setAttribute("aria-expanded", "true");
+
+        const menuItem = menuTrigger.closest(".navbar-menu-item");
+
+        if (menuItem) {
+            menuItem.classList.add("menu-open");
+        }
+
+    }
+
+
+    function closeMenu() {
+
+        if (!menuTrigger || !menuDropdown) {
+            return;
+        }
+
+        menuDropdown.classList.remove("open");
+
+        menuTrigger.classList.remove("expanded");
+
+        menuTrigger.setAttribute("aria-expanded", "false");
+
+        const menuItem = menuTrigger.closest(".navbar-menu-item");
+
+        if (menuItem) {
+            menuItem.classList.remove("menu-open");
+        }
+
+    }
+
+
+    function toggleMenu() {
+
+        if (!menuTrigger || !menuDropdown) {
+            return;
+        }
+
+        if (menuDropdown.classList.contains("open")) {
+
+            closeMenu();
+
+        } else {
+
+            openMenu();
+
+        }
+
+    }
+
+
+    /* =====================================================
+       BOTÓN MENÚ
+    ====================================================== */
+
+    if (menuTrigger) {
 
         menuTrigger.addEventListener("click", (event) => {
 
             event.preventDefault();
+
             event.stopPropagation();
 
-            const isOpen =
-                menuDropdown.classList.contains("open");
-
-            menuDropdown.classList.toggle("open");
-
-            menuTrigger.classList.toggle(
-                "expanded",
-                !isOpen
-            );
-
-            menuTrigger.setAttribute(
-                "aria-expanded",
-                String(!isOpen)
-            );
+            toggleMenu();
 
         });
 
     }
 
 
-    /* =========================================
-       CERRAR AL SELECCIONAR UN ENLACE
-    ========================================= */
+    /* =====================================================
+       ENLACES DEL SUBMENÚ
+       Al seleccionar una categoría:
+       - se cierra el navbar
+       - se navega normalmente
+    ====================================================== */
 
-    const navbarLinks = document.querySelectorAll(
-        ".navbar a"
+    if (menuDropdown) {
+
+        const menuLinks = menuDropdown.querySelectorAll("a");
+
+        menuLinks.forEach((link) => {
+
+            link.addEventListener("click", () => {
+
+                closeMenu();
+
+                closeNavbar();
+
+            });
+
+        });
+
+    }
+
+
+    /* =====================================================
+       OVERLAY
+    ====================================================== */
+
+    navbarOverlay.addEventListener("click", () => {
+
+        closeNavbar();
+
+    });
+
+
+    /* =====================================================
+       ENLACES PRINCIPALES
+       NO OCULTAR INICIO
+    ====================================================== */
+
+    const navbarLinks = navbar.querySelectorAll(
+        ".navbar-link:not(.menu-trigger)"
     );
 
     navbarLinks.forEach((link) => {
@@ -155,74 +243,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =========================================
-       CERRAR AL TOCAR EL OVERLAY
-    ========================================= */
-
-    overlay.addEventListener("click", () => {
-
-        closeNavbar();
-
-    });
-
-
-    /* =========================================
-       CERRAR CON ESC
-    ========================================= */
+    /* =====================================================
+       TECLA ESC
+    ====================================================== */
 
     document.addEventListener("keydown", (event) => {
 
         if (event.key === "Escape") {
 
-            if (navbar.classList.contains("open")) {
-                closeNavbar();
-            }
+            if (menuDropdown && menuDropdown.classList.contains("open")) {
 
-        }
+                closeMenu();
 
-    });
-
-
-    /* =========================================
-       EVITAR QUE UN CLICK DENTRO DEL NAVBAR
-       CIERRE EL MENÚ
-    ========================================= */
-
-    navbar.addEventListener("click", (event) => {
-
-        event.stopPropagation();
-
-    });
-
-
-    /* =========================================
-       CAMBIO DE TAMAÑO DE PANTALLA
-       
-       Si se pasa de móvil/tablet a escritorio
-       o viceversa, mantenemos un estado limpio.
-    ========================================= */
-
-    let lastWidth = window.innerWidth;
-
-    window.addEventListener("resize", () => {
-
-        const currentWidth = window.innerWidth;
-
-        /*
-         * Evitamos recalcular constantemente.
-         * Solo actuamos cuando realmente cambia
-         * el ancho de la ventana.
-         */
-        if (currentWidth !== lastWidth) {
-
-            lastWidth = currentWidth;
-
-            /*
-             * Si cambia mucho el tamaño de pantalla,
-             * cerramos el menú para evitar estados
-             * visuales incorrectos.
-             */
-            if (navbar.classList.contains("open")) {
+            } else if (navbar.classList.contains("open")) {
 
                 closeNavbar();
 
@@ -233,36 +266,59 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =========================================
-       ORIENTACIÓN DEL DISPOSITIVO
-    ========================================= */
+    /* =====================================================
+       EVITAR SCROLL DEL BODY CUANDO NAVBAR ESTÁ ABIERTO
+    ====================================================== */
 
-    window.addEventListener(
-        "orientationchange",
-        () => {
+    function updateBodyScroll() {
 
-            setTimeout(() => {
+        if (navbar.classList.contains("open")) {
 
-                closeNavbar();
+            document.body.style.overflow = "hidden";
 
-            }, 150);
+        } else {
+
+            document.body.style.overflow = "";
 
         }
-    );
+
+    }
 
 
-    /* =========================================
+    const observer = new MutationObserver(updateBodyScroll);
+
+    observer.observe(navbar, {
+        attributes: true,
+        attributeFilter: ["class"]
+    });
+
+
+    /* =====================================================
+       INICIO
+       SIEMPRE DEBE EXISTIR Y PERMANECER VISIBLE
+    ====================================================== */
+
+    const homeLink = navbar.querySelector('a[href="index.html"]');
+
+    if (homeLink) {
+
+        homeLink.style.display = "";
+
+    }
+
+
+    /* =====================================================
        ESTADO INICIAL
-    ========================================= */
+    ====================================================== */
 
-    navbarToggle.setAttribute(
-        "aria-expanded",
-        "false"
-    );
+    closeMenu();
 
-    navbarToggle.setAttribute(
-        "aria-label",
-        "Abrir menú"
-    );
+    navbar.classList.remove("open");
+
+    navbarToggle.classList.remove("active");
+
+    navbarOverlay.classList.remove("show");
+
+    navbarToggle.setAttribute("aria-expanded", "false");
 
 });
