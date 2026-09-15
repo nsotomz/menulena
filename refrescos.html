@@ -7,10 +7,7 @@
 
     <title>Refrescos | Leña &amp; Sabor</title>
 
-    <!-- =========================================
-         GOOGLE FONTS
-    ========================================== -->
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -18,91 +15,54 @@
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
-
-    <!-- =========================================
-         FONT AWESOME
-    ========================================== -->
-
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-
-    <!-- =========================================
-         CSS
-    ========================================== -->
-
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/responsive.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================================
-         FONDO
-    ========================================== -->
-
+    <!-- FONDO -->
     <div class="background-overlay"></div>
-
 
 
     <!-- =========================================
          BARRA LATERAL
     ========================================== -->
 
-    <nav class="navbar" id="navbar">
-
-
-        <!-- LOGO -->
+    <nav class="navbar" id="navbar" aria-label="Navegación principal">
 
         <a href="index.html" class="navbar-logo">
-
             <span>LEÑA</span>
             <span>&amp; SABOR</span>
-
         </a>
-
 
 
         <ul class="navbar-links">
 
-
-            <!-- =====================================
-                 INICIO
-            ====================================== -->
-
+            <!-- INICIO -->
             <li>
-
                 <a href="index.html" class="navbar-link">
-
                     <i class="fa-solid fa-house"></i>
-
                     <span>INICIO</span>
-
                 </a>
-
             </li>
 
 
-
-            <!-- =====================================
-                 MENÚ
-            ====================================== -->
-
+            <!-- MENÚ -->
             <li class="navbar-menu-item">
 
-
-                <button class="navbar-link menu-trigger active" id="menuTrigger" type="button">
+                <button class="navbar-link menu-trigger active" id="menuTrigger" type="button" aria-expanded="true"
+                    aria-controls="menuDropdown">
 
                     <span>
-
                         <i class="fa-solid fa-utensils"></i>
-
                         MENÚ
-
                     </span>
 
                     <i class="fa-solid fa-chevron-down"></i>
@@ -110,440 +70,250 @@
                 </button>
 
 
-
-                <!-- SUBMENÚ -->
-
                 <div class="menu-dropdown open" id="menuDropdown">
 
-
-                    <!-- ENTRADAS -->
-
                     <a href="entradas.html">
-
                         <i class="fa-solid fa-bowl-food"></i>
-
                         Entradas
-
                     </a>
-
-
-
-                    <!-- PLATOS FUERTES -->
 
                     <a href="fuertes.html">
-
                         <i class="fa-solid fa-drumstick-bite"></i>
-
                         Platos fuertes
-
                     </a>
-
-
-
-                    <!-- BEBIDAS -->
 
                     <a href="bebidas.html">
-
                         <i class="fa-solid fa-mug-hot"></i>
-
                         Bebidas
-
                     </a>
-
-
-
-                    <!-- CERVEZAS -->
 
                     <a href="cervezas.html">
-
                         <i class="fa-solid fa-beer-mug-empty"></i>
-
                         Cervezas
-
                     </a>
-
-
-
-                    <!-- REFRESCOS -->
 
                     <a href="refrescos.html" class="active">
-
                         <i class="fa-solid fa-glass-water"></i>
-
                         Refrescos
-
                     </a>
-
 
                 </div>
 
             </li>
 
 
-
-            <!-- =====================================
-                 CONTACTO
-            ====================================== -->
-
+            <!-- CONTACTO -->
             <li>
-
                 <a href="contacto.html" class="navbar-link">
-
                     <i class="fa-solid fa-phone"></i>
-
                     <span>CONTACTO</span>
-
                 </a>
-
             </li>
-
 
         </ul>
 
     </nav>
 
 
+    <!-- BOTÓN HAMBURGUESA -->
 
-    <!-- =========================================
-         BOTÓN HAMBURGUESA
-    ========================================== -->
-
-    <button class="navbar-toggle" id="navbarToggle" type="button" aria-label="Abrir menú">
+    <button class="navbar-toggle" id="navbarToggle" type="button" aria-label="Abrir menú" aria-expanded="false"
+        aria-controls="navbar">
 
         <i class="fa-solid fa-bars"></i>
 
     </button>
 
 
-
     <!-- =========================================
          CONTENIDO
     ========================================== -->
 
-    <main class="menu-page">
+    <main class="menu-page refrescos-page">
 
 
-        <!-- =====================================
-             ENCABEZADO
-        ====================================== -->
+        <!-- ENCABEZADO -->
 
         <header class="menu-page-header">
 
-
             <span class="menu-page-kicker">
-
                 LEÑA &amp; SABOR
-
             </span>
 
-
-            <h1>
-
-                REFRESCOS
-
-            </h1>
-
+            <h1>REFRESCOS</h1>
 
             <p>
-
                 Opciones refrescantes para acompañar
                 tu experiencia.
-
             </p>
-
 
         </header>
 
 
-
-        <!-- =========================================
-             PRODUCTOS
-        ========================================== -->
+        <!-- PRODUCTOS -->
 
         <section class="menu-products refrescos-products">
 
 
-
-            <!-- =====================================
-                 REFRESCO 1
-            ====================================== -->
+            <!-- COCA-COLA -->
 
             <article class="menu-product-card refresco-card">
 
-
-                <!-- IMAGEN LIBRE -->
-
                 <div class="menu-product-image refresco-image">
 
-
-                    <!-- HOJA DECORATIVA -->
-
                     <span class="drink-leaf leaf-1" aria-hidden="true">
-
                         <i class="fa-solid fa-leaf"></i>
-
                     </span>
 
-
-                    <!-- PRODUCTO -->
-
-                    <img src="img/COCA-COLA.PNG" alt="Coca-Cola Personal">
-
-
-                    <!-- HOJA DECORATIVA -->
+                    <img src="img/COCA-COLA.PNG" alt="Coca-Cola Personal" loading="lazy">
 
                     <span class="drink-leaf leaf-2" aria-hidden="true">
-
                         <i class="fa-solid fa-leaf"></i>
-
                     </span>
-
 
                 </div>
 
-
-
-                <!-- INFORMACIÓN -->
 
                 <div class="menu-product-content">
 
-
-                    <h2>
-
-                        Coca-Cola Personal
-
-                    </h2>
-
+                    <h2>Coca-Cola Personal</h2>
 
                     <span class="menu-product-price">
-
                         $5.000
-
                     </span>
 
-
                     <p>
-
-                        Una bebida fresca y ligera para
-                        acompañar nuestros platos.
-
+                        Una bebida fresca y ligera para acompañar
+                        nuestros platos.
                     </p>
 
-
                 </div>
-
 
             </article>
 
 
-
-            <!-- =====================================
-                 REFRESCO 2
-            ====================================== -->
+            <!-- JARRA DE AGUAPANELA -->
 
             <article class="menu-product-card refresco-card">
 
-
                 <div class="menu-product-image refresco-image">
 
-
                     <span class="drink-leaf leaf-1" aria-hidden="true">
-
                         <i class="fa-solid fa-leaf"></i>
-
                     </span>
 
-
-                    <img src="img/JARRA.PNG" alt="Jarra de Aguapanela">
-
+                    <img src="img/JARRA.PNG" alt="Jarra de Aguapanela" loading="lazy">
 
                     <span class="drink-leaf leaf-2" aria-hidden="true">
-
                         <i class="fa-solid fa-leaf"></i>
-
                     </span>
-
 
                 </div>
 
 
-
                 <div class="menu-product-content">
 
-
-                    <h2>
-
-                        Jarra de Aguapanela
-
-                    </h2>
-
+                    <h2>Jarra de Aguapanela</h2>
 
                     <span class="menu-product-price">
-
                         $10.000
-
                     </span>
 
-
                     <p>
-
                         Una combinación refrescante preparada
                         para disfrutar en cualquier momento.
-
                     </p>
 
-
                 </div>
-
 
             </article>
 
 
-
-            <!-- =====================================
-                 REFRESCO 3
-            ====================================== -->
+            <!-- GATORADE -->
 
             <article class="menu-product-card refresco-card">
 
-
                 <div class="menu-product-image refresco-image">
 
-
                     <span class="drink-leaf leaf-1" aria-hidden="true">
-
                         <i class="fa-solid fa-leaf"></i>
-
                     </span>
 
-
-                    <img src="img/GATORADE.PNG" alt="Gatorade">
-
+                    <img src="img/GATORADE.PNG" alt="Gatorade" loading="lazy">
 
                     <span class="drink-leaf leaf-2" aria-hidden="true">
-
                         <i class="fa-solid fa-leaf"></i>
-
                     </span>
-
 
                 </div>
 
 
-
                 <div class="menu-product-content">
 
-
-                    <h2>
-
-                        Gatorade
-
-                    </h2>
-
+                    <h2>Gatorade</h2>
 
                     <span class="menu-product-price">
-
                         $6.000
-
                     </span>
 
-
                     <p>
-
                         Una opción refrescante para acompañar
                         tu comida.
-
                     </p>
 
-
                 </div>
-
 
             </article>
 
 
-
-            <!-- =====================================
-                 REFRESCO 4
-            ====================================== -->
+            <!-- JUGO HIT -->
 
             <article class="menu-product-card refresco-card">
 
-
                 <div class="menu-product-image refresco-image">
 
-
                     <span class="drink-leaf leaf-1" aria-hidden="true">
-
                         <i class="fa-solid fa-leaf"></i>
-
                     </span>
 
-
-                    <img src="img/HIT.PNG" alt="Jugo Hit">
-
+                    <img src="img/HIT.PNG" alt="Jugo Hit" loading="lazy">
 
                     <span class="drink-leaf leaf-2" aria-hidden="true">
-
                         <i class="fa-solid fa-leaf"></i>
-
                     </span>
 
-
                 </div>
-
 
 
                 <div class="menu-product-content">
 
-
-                    <h2>
-
-                        Jugo Hit
-
-                    </h2>
-
+                    <h2>Jugo Hit</h2>
 
                     <span class="menu-product-price">
-
                         $6.000
-
                     </span>
 
-
                     <p>
-
                         Una opción tropical y refrescante
                         para completar tu comida.
-
                     </p>
 
-
                 </div>
-
 
             </article>
 
 
         </section>
 
-
     </main>
 
 
-
-    <!-- =========================================
-         SCRIPTS
-    ========================================== -->
+    <!-- SCRIPTS -->
 
     <script src="js/main.js"></script>
-
     <script src="js/animations.js"></script>
-
     <script src="js/leaves.js"></script>
-
     <script src="js/navbar.js"></script>
-
 
 </body>
 
