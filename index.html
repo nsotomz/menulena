@@ -321,209 +321,163 @@
         }
 
 
-
         /* =====================================================
-       MOVIMIENTO NATURAL + MOVIMIENTO DEL CELULAR
-    ====================================================== */
-
-        .friendship-hanging-heart {
-            --device-x: 0px;
-            --device-y: 0px;
-            --device-rotation: 0deg;
-            --swing: 0deg;
-
-            transform:
-                translateX(var(--device-x)) translateY(var(--device-y)) rotate(calc(var(--swing) + var(--device-rotation)));
-
-            transform-origin: top center;
-
-            animation: friendship-swing 5s ease-in-out infinite;
-        }
-
-
-        /* Balanceo natural cuando está quieto */
+           MOVIMIENTO NATURAL DEL CORAZÓN
+        ====================================================== */
 
         @keyframes friendship-swing {
 
             0% {
-                --swing: -3deg;
+
+                transform: rotate(-3deg);
+
             }
 
             25% {
-                --swing: 2.5deg;
+
+                transform: rotate(2.5deg);
+
             }
 
             50% {
-                --swing: -1.5deg;
+
+                transform: rotate(-1.5deg);
+
             }
 
             75% {
-                --swing: 2deg;
+
+                transform: rotate(2deg);
+
             }
 
             100% {
-                --swing: -3deg;
+
+                transform: rotate(-3deg);
+
             }
+
         }
 
 
         /* =====================================================
-       TABLET
-    ====================================================== */
+           TABLET
+        ====================================================== */
 
         @media (max-width: 768px) {
 
             .friendship-hanging-heart {
-                animation-duration: 4.5s;
+
+                right: 3%;
+
+                width: 150px;
+                height: 200px;
+
+            }
+
+
+            .friendship-heart {
+
+                top: 64px;
+
+                width: 118px;
+                height: 108px;
+
+            }
+
+
+            .friendship-heart-content {
+
+                top: 20px;
+                left: 0;
+
+                width: 100%;
+
+            }
+
+
+            .friendship-heart-content span {
+
+                font-size: .65rem;
+
+            }
+
+
+            .friendship-heart-content strong {
+
+                font-size: .72rem;
+
             }
 
         }
 
 
         /* =====================================================
-       CELULAR
-    ====================================================== */
+           CELULAR
+        ====================================================== */
 
         @media (max-width: 480px) {
 
             .friendship-hanging-heart {
-                animation-duration: 4s;
+
+                top: -5px;
+                right: 2%;
+
+                width: 132px;
+                height: 178px;
+
+            }
+
+
+            .friendship-heart {
+
+                width: 102px;
+                height: 93px;
+
+                top: 60px;
+
+            }
+
+
+            .friendship-heart-content {
+
+                top: 16px;
+                left: 0;
+
+                width: 100%;
+
+            }
+
+
+            .friendship-heart-content span {
+
+                font-size: .57rem;
+
+            }
+
+
+            .friendship-heart-content strong {
+
+                font-size: .62rem;
+
             }
 
         }
 
 
         /* =====================================================
-       RESPETAR REDUCCIÓN DE MOVIMIENTO
-    ====================================================== */
+           REDUCIR MOVIMIENTO SI EL USUARIO LO TIENE DESACTIVADO
+        ====================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
             .friendship-hanging-heart {
+
                 animation: none;
+
             }
 
         }
-    </style>
-
-    /* =====================================================
-    TABLET
-    ====================================================== */
-
-    @media (max-width: 768px) {
-
-    .friendship-hanging-heart {
-
-    right: 3%;
-
-    width: 150px;
-    height: 200px;
-
-    }
-
-
-    .friendship-heart {
-
-    top: 64px;
-
-    width: 118px;
-    height: 108px;
-
-    }
-
-
-    .friendship-heart-content {
-
-    top: 20px;
-    left: 0;
-
-    width: 100%;
-
-    }
-
-
-    .friendship-heart-content span {
-
-    font-size: .65rem;
-
-    }
-
-
-    .friendship-heart-content strong {
-
-    font-size: .72rem;
-
-    }
-
-    }
-
-
-    /* =====================================================
-    CELULAR
-    ====================================================== */
-
-    @media (max-width: 480px) {
-
-    .friendship-hanging-heart {
-
-    top: -5px;
-    right: 2%;
-
-    width: 132px;
-    height: 178px;
-
-    }
-
-
-    .friendship-heart {
-
-    width: 102px;
-    height: 93px;
-
-    top: 60px;
-
-    }
-
-
-    .friendship-heart-content {
-
-    top: 16px;
-    left: 0;
-
-    width: 100%;
-
-    }
-
-
-    .friendship-heart-content span {
-
-    font-size: .57rem;
-
-    }
-
-
-    .friendship-heart-content strong {
-
-    font-size: .62rem;
-
-    }
-
-    }
-
-
-    /* =====================================================
-    REDUCIR MOVIMIENTO SI EL USUARIO LO TIENE DESACTIVADO
-    ====================================================== */
-
-    @media (prefers-reduced-motion: reduce) {
-
-    .friendship-hanging-heart {
-
-    animation: none;
-
-    }
-
-    }
     </style>
 
 </head>
