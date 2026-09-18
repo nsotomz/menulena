@@ -77,8 +77,8 @@
             right: 4%;
             left: auto;
 
-            width: 145px;
-            height: 190px;
+            width: 175px;
+            height: 225px;
 
             z-index: 50;
 
@@ -212,11 +212,11 @@
 
             position: absolute;
 
-            top: 60px;
+            top: 68px;
             left: 50%;
 
-            width: 110px;
-            height: 100px;
+            width: 138px;
+            height: 125px;
 
             transform: translateX(-50%);
 
@@ -321,161 +321,209 @@
         }
 
 
+
         /* =====================================================
-           MOVIMIENTO NATURAL DEL CORAZÓN
-        ====================================================== */
+       MOVIMIENTO NATURAL + MOVIMIENTO DEL CELULAR
+    ====================================================== */
+
+        .friendship-hanging-heart {
+            --device-x: 0px;
+            --device-y: 0px;
+            --device-rotation: 0deg;
+            --swing: 0deg;
+
+            transform:
+                translateX(var(--device-x)) translateY(var(--device-y)) rotate(calc(var(--swing) + var(--device-rotation)));
+
+            transform-origin: top center;
+
+            animation: friendship-swing 5s ease-in-out infinite;
+        }
+
+
+        /* Balanceo natural cuando está quieto */
 
         @keyframes friendship-swing {
 
             0% {
-
-                transform: rotate(-3deg);
-
+                --swing: -3deg;
             }
 
             25% {
-
-                transform: rotate(2.5deg);
-
+                --swing: 2.5deg;
             }
 
             50% {
-
-                transform: rotate(-1.5deg);
-
+                --swing: -1.5deg;
             }
 
             75% {
-
-                transform: rotate(2deg);
-
+                --swing: 2deg;
             }
 
             100% {
-
-                transform: rotate(-3deg);
-
+                --swing: -3deg;
             }
-
         }
 
 
         /* =====================================================
-           TABLET
-        ====================================================== */
+       TABLET
+    ====================================================== */
 
         @media (max-width: 768px) {
 
             .friendship-hanging-heart {
-
-                right: 3%;
-
-                width: 125px;
-                height: 170px;
-
-            }
-
-
-            .friendship-heart {
-
-                width: 96px;
-                height: 88px;
-
-            }
-
-
-            .friendship-heart-content {
-
-                top: 20px;
-                left: 0;
-
-                width: 100%;
-
-            }
-
-
-            .friendship-heart-content span {
-
-                font-size: .65rem;
-
-            }
-
-
-            .friendship-heart-content strong {
-
-                font-size: .72rem;
-
+                animation-duration: 4.5s;
             }
 
         }
 
 
         /* =====================================================
-           CELULAR
-        ====================================================== */
+       CELULAR
+    ====================================================== */
 
         @media (max-width: 480px) {
 
             .friendship-hanging-heart {
-
-                top: -5px;
-                right: 2%;
-
-                width: 110px;
-                height: 150px;
-
-            }
-
-
-            .friendship-heart {
-
-                width: 84px;
-                height: 76px;
-
-                top: 55px;
-
-            }
-
-
-            .friendship-heart-content {
-
-                top: 16px;
-                left: 0;
-
-                width: 100%;
-
-            }
-
-
-            .friendship-heart-content span {
-
-                font-size: .57rem;
-
-            }
-
-
-            .friendship-heart-content strong {
-
-                font-size: .62rem;
-
+                animation-duration: 4s;
             }
 
         }
 
 
         /* =====================================================
-           REDUCIR MOVIMIENTO SI EL USUARIO LO TIENE DESACTIVADO
-        ====================================================== */
+       RESPETAR REDUCCIÓN DE MOVIMIENTO
+    ====================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
             .friendship-hanging-heart {
-
                 animation: none;
-
             }
 
         }
+    </style>
+
+    /* =====================================================
+    TABLET
+    ====================================================== */
+
+    @media (max-width: 768px) {
+
+    .friendship-hanging-heart {
+
+    right: 3%;
+
+    width: 150px;
+    height: 200px;
+
+    }
+
+
+    .friendship-heart {
+
+    top: 64px;
+
+    width: 118px;
+    height: 108px;
+
+    }
+
+
+    .friendship-heart-content {
+
+    top: 20px;
+    left: 0;
+
+    width: 100%;
+
+    }
+
+
+    .friendship-heart-content span {
+
+    font-size: .65rem;
+
+    }
+
+
+    .friendship-heart-content strong {
+
+    font-size: .72rem;
+
+    }
+
+    }
+
+
+    /* =====================================================
+    CELULAR
+    ====================================================== */
+
+    @media (max-width: 480px) {
+
+    .friendship-hanging-heart {
+
+    top: -5px;
+    right: 2%;
+
+    width: 132px;
+    height: 178px;
+
+    }
+
+
+    .friendship-heart {
+
+    width: 102px;
+    height: 93px;
+
+    top: 60px;
+
+    }
+
+
+    .friendship-heart-content {
+
+    top: 16px;
+    left: 0;
+
+    width: 100%;
+
+    }
+
+
+    .friendship-heart-content span {
+
+    font-size: .57rem;
+
+    }
+
+
+    .friendship-heart-content strong {
+
+    font-size: .62rem;
+
+    }
+
+    }
+
+
+    /* =====================================================
+    REDUCIR MOVIMIENTO SI EL USUARIO LO TIENE DESACTIVADO
+    ====================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+    .friendship-hanging-heart {
+
+    animation: none;
+
+    }
+
+    }
     </style>
 
 </head>
@@ -1024,6 +1072,51 @@
 
 
             /* ================================================
+               MOVIMIENTO AL TOCAR / ARRASTRAR LA PANTALLA
+
+               Respaldo para cuando el giroscopio no está
+               disponible o el usuario no dio permiso: el
+               corazón también reacciona al dedo en pantalla.
+            ================================================= */
+
+            function moveFriendshipHeartByTouch(x) {
+
+                const relativeX =
+                    (x / window.innerWidth - 0.5) * 2;
+
+
+                const moveX =
+                    relativeX * 12;
+
+                const rotation =
+                    relativeX * 10;
+
+
+                friendshipHeart.style.transform =
+                    `translateX(${moveX}px)
+                     rotate(${rotation}deg)`;
+
+            }
+
+
+            window.addEventListener(
+                "touchmove",
+                function (event) {
+
+                    if (event.touches && event.touches[0]) {
+
+                        moveFriendshipHeartByTouch(
+                            event.touches[0].clientX
+                        );
+
+                    }
+
+                },
+                { passive: true }
+            );
+
+
+            /* ================================================
                ACTIVAR SENSOR
             ================================================= */
 
@@ -1075,8 +1168,7 @@
                 typeof DeviceOrientationEvent.requestPermission === "function"
             ) {
 
-                document.addEventListener(
-                    "click",
+                const requestMotionPermission =
                     async function enableMotion() {
 
                         try {
@@ -1100,10 +1192,19 @@
 
                         }
 
-                    },
-                    {
-                        once: true
-                    }
+                    };
+
+
+                document.addEventListener(
+                    "click",
+                    requestMotionPermission,
+                    { once: true }
+                );
+
+                document.addEventListener(
+                    "touchend",
+                    requestMotionPermission,
+                    { once: true }
                 );
 
             }
