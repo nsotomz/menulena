@@ -15,9 +15,6 @@
 
     <!-- =====================================================
          FAVICON
-         Nota: usa siempre las extensiones en minúscula y
-         verifica que el nombre del archivo coincida EXACTO
-         con el del disco (Linux distingue mayúsculas).
     ====================================================== -->
 
     <link rel="icon" type="image/png" href="img/logo2.png">
@@ -57,6 +54,430 @@
 
     <link rel="stylesheet" href="css/responsive.css">
 
+
+    <!-- =====================================================
+         💛 PROMOCIÓN TEMPORAL - AMOR Y AMISTAD
+
+         ⚠️ TEMPORAL:
+         Cuando termine la celebración, elimina TODO este
+         bloque <style>.
+    ====================================================== -->
+
+    <style>
+        /* =====================================================
+           CONTENEDOR DEL CORAZÓN
+           (ahora anclado al costado derecho, no al centro)
+        ====================================================== */
+
+        .friendship-hanging-heart {
+
+            position: absolute;
+
+            top: -8px;
+            right: 4%;
+            left: auto;
+
+            width: 145px;
+            height: 190px;
+
+            z-index: 50;
+
+            pointer-events: none;
+
+            transform: rotate(-2deg);
+
+            transform-origin: top center;
+
+            animation:
+                friendship-swing 5s ease-in-out infinite;
+
+        }
+
+
+        /* =====================================================
+           CUERDA
+        ====================================================== */
+
+        .friendship-rope {
+
+            position: absolute;
+
+            top: 0;
+            left: 50%;
+
+            width: 3px;
+            height: 58px;
+
+            transform: translateX(-50%);
+
+            background:
+                repeating-linear-gradient(45deg,
+                    #76552F 0px,
+                    #C49A5A 2px,
+                    #684824 4px,
+                    #A87D42 6px);
+
+            border-radius: 4px;
+
+            box-shadow:
+                1px 0 2px rgba(0, 0, 0, .25);
+
+        }
+
+
+        /* =====================================================
+           NUDO DE LA CUERDA
+        ====================================================== */
+
+        .friendship-knot {
+
+            position: absolute;
+
+            top: 49px;
+            left: 50%;
+
+            width: 36px;
+            height: 24px;
+
+            transform: translateX(-50%);
+
+            z-index: 5;
+
+        }
+
+
+        .friendship-knot span {
+
+            position: absolute;
+
+            width: 20px;
+            height: 12px;
+
+            top: 2px;
+
+            border: 3px solid #A77A42;
+
+            border-radius: 50%;
+
+        }
+
+
+        .friendship-knot span:first-child {
+
+            left: 0;
+
+            transform: rotate(28deg);
+
+        }
+
+
+        .friendship-knot span:last-child {
+
+            right: 0;
+
+            transform: rotate(-28deg);
+
+        }
+
+
+        .friendship-knot::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+            top: 7px;
+
+            width: 9px;
+            height: 9px;
+
+            transform: translateX(-50%);
+
+            background: #C49A5A;
+
+            border-radius: 50%;
+
+        }
+
+
+        /* =====================================================
+           CORAZÓN
+           (SVG vectorial con path real: contorno perfecto
+           en cualquier tamaño o pantalla, sin el hack de
+           círculos/semicírculos)
+        ====================================================== */
+
+        .friendship-heart {
+
+            position: absolute;
+
+            top: 60px;
+            left: 50%;
+
+            width: 110px;
+            height: 100px;
+
+            transform: translateX(-50%);
+
+            filter:
+                drop-shadow(0 10px 14px rgba(0, 0, 0, .32));
+
+        }
+
+
+        .friendship-heart-svg {
+
+            display: block;
+
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+        .friendship-heart-svg path {
+
+            stroke: rgba(244, 180, 0, .65);
+
+            stroke-width: 2;
+
+            vector-effect: non-scaling-stroke;
+
+        }
+
+
+        /* =====================================================
+           TEXTO DEL CORAZÓN
+        ====================================================== */
+
+        .friendship-heart-content {
+
+            position: absolute;
+
+            z-index: 10;
+
+            top: 24px;
+            left: 0;
+
+            width: 100%;
+
+            text-align: center;
+
+            font-family:
+                "Playfair Display",
+                serif;
+
+        }
+
+
+        .friendship-heart-content span {
+
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: #E1C78F;
+
+            font-size: .72rem;
+
+            font-style: italic;
+
+        }
+
+
+        .friendship-heart-content strong {
+
+            display: block;
+
+            color: #F2E4C8;
+
+            font-size: .82rem;
+
+            line-height: 1.12;
+
+            font-weight: 700;
+
+            letter-spacing: .2px;
+
+            text-shadow:
+                0 1px 3px rgba(0, 0, 0, .55);
+
+        }
+
+
+        .friendship-heart-content::after {
+
+            content: "✦";
+
+            display: block;
+
+            margin-top: 5px;
+
+            color: #D49A32;
+
+            font-size: .65rem;
+
+        }
+
+
+        /* =====================================================
+           MOVIMIENTO NATURAL DEL CORAZÓN
+        ====================================================== */
+
+        @keyframes friendship-swing {
+
+            0% {
+
+                transform: rotate(-3deg);
+
+            }
+
+            25% {
+
+                transform: rotate(2.5deg);
+
+            }
+
+            50% {
+
+                transform: rotate(-1.5deg);
+
+            }
+
+            75% {
+
+                transform: rotate(2deg);
+
+            }
+
+            100% {
+
+                transform: rotate(-3deg);
+
+            }
+
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 768px) {
+
+            .friendship-hanging-heart {
+
+                right: 3%;
+
+                width: 125px;
+                height: 170px;
+
+            }
+
+
+            .friendship-heart {
+
+                width: 96px;
+                height: 88px;
+
+            }
+
+
+            .friendship-heart-content {
+
+                top: 20px;
+                left: 0;
+
+                width: 100%;
+
+            }
+
+
+            .friendship-heart-content span {
+
+                font-size: .65rem;
+
+            }
+
+
+            .friendship-heart-content strong {
+
+                font-size: .72rem;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           CELULAR
+        ====================================================== */
+
+        @media (max-width: 480px) {
+
+            .friendship-hanging-heart {
+
+                top: -5px;
+                right: 2%;
+
+                width: 110px;
+                height: 150px;
+
+            }
+
+
+            .friendship-heart {
+
+                width: 84px;
+                height: 76px;
+
+                top: 55px;
+
+            }
+
+
+            .friendship-heart-content {
+
+                top: 16px;
+                left: 0;
+
+                width: 100%;
+
+            }
+
+
+            .friendship-heart-content span {
+
+                font-size: .57rem;
+
+            }
+
+
+            .friendship-heart-content strong {
+
+                font-size: .62rem;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           REDUCIR MOVIMIENTO SI EL USUARIO LO TIENE DESACTIVADO
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .friendship-hanging-heart {
+
+                animation: none;
+
+            }
+
+        }
+    </style>
+
 </head>
 
 
@@ -69,7 +490,10 @@
 
     <div class="bg-layer" aria-hidden="true"></div>
 
-    <div class="bg-texture" aria-hidden="true"></div>
+    <div class="bg-texture" aria-hidden="true">
+
+
+    </div>
 
 
     <!-- =====================================================
@@ -223,12 +647,14 @@
 
                     </span>
 
-                    <i class="fa-solid fa-chevron-down menu-arrow" aria-hidden="true"></i>
+                    <i class="fa-solid fa-chevron-down menu-arrow" aria-hidden="true">
+                    </i>
 
                 </button>
 
 
                 <div class="menu-dropdown" id="menuDropdown">
+
 
                     <a href="entradas.html">
 
@@ -274,6 +700,7 @@
 
                     </a>
 
+
                 </div>
 
             </li>
@@ -309,15 +736,14 @@
     <button class="navbar-toggle" id="navbarToggle" type="button" aria-label="Abrir menú" aria-expanded="false"
         aria-controls="navbar">
 
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <i class="fa-solid fa-bars" aria-hidden="true">
+        </i>
 
     </button>
 
 
     <!-- =====================================================
          LOGO STICKY
-         El respaldo de texto ahora sí aparece si la imagen
-         no carga.
     ====================================================== -->
 
     <div class="logo-sticky" id="logoSticky" aria-hidden="true">
@@ -339,6 +765,77 @@
     ====================================================== -->
 
     <header class="hero-wrap" id="heroWrap">
+
+
+        <!-- =================================================
+             💛 CORAZÓN TEMPORAL DE AMOR Y AMISTAD
+
+             ⚠️ TEMPORAL:
+             Cuando pase la fecha, elimina TODO este bloque.
+        ================================================== -->
+
+        <div class="friendship-hanging-heart" id="friendshipHeart" aria-label="Feliz día del amor y la amistad">
+
+            <!-- Cuerda -->
+
+            <div class="friendship-rope"></div>
+
+
+            <!-- Nudo -->
+
+            <div class="friendship-knot">
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+
+            <!-- Corazón -->
+
+            <div class="friendship-heart">
+
+                <svg class="friendship-heart-svg" viewBox="0 0 100 90" aria-hidden="true" focusable="false">
+
+                    <defs>
+
+                        <linearGradient id="friendshipHeartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+
+                            <stop offset="0%" stop-color="#7A5030" />
+
+                            <stop offset="48%" stop-color="#68442A" />
+
+                            <stop offset="100%" stop-color="#4A2D1B" />
+
+                        </linearGradient>
+
+                    </defs>
+
+                    <path
+                        d="M50,88 C20,66 0,46 0,25 C0,10 14,0 30,0 C41,0 48,7 50,17 C52,7 59,0 70,0 C86,0 100,10 100,25 C100,46 80,66 50,88 Z"
+                        fill="url(#friendshipHeartGradient)" />
+
+                </svg>
+
+
+                <div class="friendship-heart-content">
+
+                    <span>Feliz día</span>
+
+                    <strong>
+                        del amor
+                        <br>
+                        y la amistad
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FIN DEL CORAZÓN TEMPORAL -->
 
 
         <!-- =================================================
@@ -405,7 +902,8 @@
 
             </span>
 
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            <i class="fa-solid fa-arrow-right" aria-hidden="true">
+            </i>
 
         </button>
 
@@ -441,18 +939,200 @@
 
 
     <!-- =====================================================
-         JAVASCRIPT
-         defer evita que los scripts bloqueen el render y
-         garantiza que el DOM ya exista al ejecutarse.
+         💛 MOVIMIENTO DEL CORAZÓN CON EL TELÉFONO
+
+         ⚠️ TEMPORAL:
+         Cuando termine la celebración, elimina TODO este
+         bloque <script>.
     ====================================================== -->
 
-    <script src="js/main.js" defer></script>
+    <script>
 
-    <script src="js/animations.js" defer></script>
+        const friendshipHeart =
+            document.getElementById("friendshipHeart");
 
-    <script src="js/leaves.js" defer></script>
 
-    <script src="js/navbar.js" defer></script>
+        if (friendshipHeart) {
+
+            let motionEnabled = false;
+
+
+            /* ================================================
+               MOVIMIENTO SEGÚN LA INCLINACIÓN DEL TELÉFONO
+            ================================================= */
+
+            function moveFriendshipHeart(event) {
+
+                const gamma =
+                    event.gamma || 0;
+
+                const beta =
+                    event.beta || 45;
+
+
+                /*
+                 * Movimiento lateral:
+                 * cuando inclinas el teléfono a izquierda
+                 * o derecha, el corazón acompaña el movimiento.
+                 */
+
+                const moveX =
+                    Math.max(
+                        -12,
+                        Math.min(
+                            12,
+                            gamma * 0.35
+                        )
+                    );
+
+
+                /*
+                 * Movimiento vertical muy pequeño
+                 * para que parezca realmente colgado.
+                 */
+
+                const moveY =
+                    Math.max(
+                        -6,
+                        Math.min(
+                            6,
+                            (beta - 45) * 0.08
+                        )
+                    );
+
+
+                /*
+                 * Rotación del corazón.
+                 */
+
+                const rotation =
+                    Math.max(
+                        -10,
+                        Math.min(
+                            10,
+                            gamma * 0.40
+                        )
+                    );
+
+
+                friendshipHeart.style.transform =
+                    `translateX(${moveX}px)
+                     translateY(${moveY}px)
+                     rotate(${rotation}deg)`;
+
+            }
+
+
+            /* ================================================
+               ACTIVAR SENSOR
+            ================================================= */
+
+            function activateMotion() {
+
+                if (motionEnabled) {
+
+                    return;
+
+                }
+
+
+                motionEnabled = true;
+
+
+                window.addEventListener(
+                    "deviceorientation",
+                    moveFriendshipHeart,
+                    true
+                );
+
+            }
+
+
+            /* ================================================
+               ANDROID / NAVEGADORES SIN PERMISO ESPECIAL
+            ================================================= */
+
+            if (
+                typeof DeviceOrientationEvent !== "undefined" &&
+                typeof DeviceOrientationEvent.requestPermission !== "function"
+            ) {
+
+                activateMotion();
+
+            }
+
+
+            /* ================================================
+               IPHONE / IPAD
+
+               Algunos dispositivos Apple requieren que el
+               usuario autorice el sensor después de tocar
+               la pantalla.
+            ================================================= */
+
+            if (
+                typeof DeviceOrientationEvent !== "undefined" &&
+                typeof DeviceOrientationEvent.requestPermission === "function"
+            ) {
+
+                document.addEventListener(
+                    "click",
+                    async function enableMotion() {
+
+                        try {
+
+                            const permission =
+                                await DeviceOrientationEvent
+                                    .requestPermission();
+
+
+                            if (permission === "granted") {
+
+                                activateMotion();
+
+                            }
+
+                        } catch (error) {
+
+                            console.log(
+                                "Sensor de movimiento no disponible."
+                            );
+
+                        }
+
+                    },
+                    {
+                        once: true
+                    }
+                );
+
+            }
+
+        }
+
+    </script>
+
+
+    <!-- =====================================================
+         FIN DEL MOVIMIENTO TEMPORAL
+    ====================================================== -->
+
+
+    <!-- =====================================================
+         JAVASCRIPT PRINCIPAL
+    ====================================================== -->
+
+    <script src="js/main.js" defer>
+    </script>
+
+    <script src="js/animations.js" defer>
+    </script>
+
+    <script src="js/leaves.js" defer>
+    </script>
+
+    <script src="js/navbar.js" defer>
+    </script>
 
 
 </body>
